@@ -10,16 +10,11 @@
         var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Event");
         vm.minDate = new Date();
 
-        vm.saveEmployee = function () {
-            alert('asdf');
-        }
-
         vm.save = function (event)
         {
             var AddEvent = $firebaseArray(ref);
             var date = event.date;
             event.date = event.date.toString();
-            event.comments = [];
             AddEvent.$add(event);
             $mdToast.show(
                           $mdToast.simple()

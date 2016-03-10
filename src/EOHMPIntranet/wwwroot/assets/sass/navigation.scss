@@ -119,5 +119,21 @@ md-sidenav.md-locked-open {
             }  
         }
     }
+    .md-name{
+        color: $ci-blue;
+        font-size: 1.2em;
+        margin: 0px;
+    }
+    .md-email{
+        color: $dark-gray;
+        font-size: 0.75em;
+        margin: 0px;
+    }
 }
 
+.main-navigation{
+    margin: 0;
+    width: calc(100% - 100px);
+    min-height: calc(100% - 100px);
+    height: calc(100% - 100px);
+}

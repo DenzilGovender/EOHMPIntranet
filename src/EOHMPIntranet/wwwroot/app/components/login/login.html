@@ -1,0 +1,42 @@
+﻿<md-content class="main-content md-padding page-content transparent">
+    <md-content class="box-shadow md-padding margin-bottom-32">
+        <form name="vm.captureRecruitment">
+            <div layout-gt-md="row" layout-md="column">
+                <div flex>
+                    <!-- Left Col -->
+                    <md-input-container class="md-block">
+                        <label>Username</label>
+                        <input ng-model="vm.login.username" required name="positionTitle"  />
+
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Password</label>
+                        <input ng-model="vm.login.password" required name="positionTitle" ng-pattern="/^[a-zA-Z0-9\s]*$/" />
+
+                    </md-input-container>
+                   
+
+
+
+
+
+                </div>
+               
+
+
+            </div>
+       
+            <md-content class="md-padding">
+                <div layout="row">
+                    <div flex="50" layout="row" layout-align="end end">
+                        <md-button class="md-primary md-primary-custom" ng-click="loginWithFacebook(vm.login)">Login with facebook</md-button>
+                    </div>
+                    <div flex="50" layout="row" layout-align="end end">
+                        <md-button class="md-primary md-primary-custom" ng-click="login(vm.login)">Login</md-button>
+                    </div>
+
+                </div>
+            </md-content>
+        </form>
+    </md-content>

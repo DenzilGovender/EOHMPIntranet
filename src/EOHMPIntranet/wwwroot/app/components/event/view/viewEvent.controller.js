@@ -1,19 +1,51 @@
 ﻿(function () {
     'use strict';
 
-    angular
-        .module('EOHIntranet')
-        .controller('viewEvent', viewEvent);
-
-    viewEvent.$inject = ['$location']; 
-
-    function viewEvent($location) {
+    function ViewEventController($location, $scope, $firebaseObject, EventService) {
         /* jshint validthis:true */
         var vm = this;
-        vm.title = 'viewEvent';
+        vm.title = 'View Event';
+        var ref;
+       
 
-        activate();
+        init();
 
-        function activate() { }
+        function init() {
+            vm.event = EventService.getSelectedEvent();
+            ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Event/" + vm.event.$id);
+           
+        }
+
+        vm.addEventComment = function (comment) {
+
+            var oldEvent = $firebaseObject(ref);
+            vm.comments = vm.event.comments;
+            if (vm.comments == undefined) {
+                vm.comments = [];
+            }
+            vm.comments.push(comment);                
+            oldEvent.comments = vm.comments;      
+            var event = (vm.comments, vm.event);
+            oldEvent.$id = event.$id;
+            oldEvent.name = event.name;
+            oldEvent.type = event.type;
+            oldEvent.venue = event.venue;
+            oldEvent.date = event.date;
+            oldEvent.$save();
+            vm.comment = undefined;
+        }
+
+        var buildEvent = function (comments, event) {
+            return {
+                comments: comments,
+                $id: event.$id,
+                name: event.name,
+                type: event.type,
+                venue: event.venue,
+                date: event.date,              
+            }
+        }
     }
+    angular.module('EOHIntranet').controller('ViewEventController', ViewEventController);
+    ViewEventController.$inject = ['$location', '$scope', '$firebaseObject', 'EventService'];
 })();
