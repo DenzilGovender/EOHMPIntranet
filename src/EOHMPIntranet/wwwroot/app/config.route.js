@@ -8,7 +8,13 @@
             controller: 'IndexController',
             templateUrl: 'index.html',
             controllerAs: 'vm'            
-        }).otherwise({ redirectTo: '/' });
+        })
+          .when('/AdminRecruitment', {
+              controller: 'AdmimRecruitmentCreateController',
+              templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
+              controllerAs: 'vm'
+          })
+            .otherwise({ redirectTo: '/' });
     }
 
     angular.module('EOHIntranet').config(['$routeProvider', '$locationProvider', routeProvider]);
