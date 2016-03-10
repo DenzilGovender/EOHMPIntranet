@@ -13,12 +13,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="recruitment in vm.listOfRecruitments | orderBy: order | limitTo: vm.pagenation.limit : (vm.pagenation.page -1) * vm.pagenation.limit track by $index" class="hover">
-                        <td ng-bind="recruitment.positionTitle" ng-click="vm.edit(beneficiary)"></td>
-                        <td ng-bind="recruitment.closeDate | date:'HH:mm:ss'"  ng-click="vm.edit(beneficiary)"></td>
-                        <td ng-bind="recruitment.department" ng-click="vm.edit(beneficiary)"></td>
-                        <td ng-bind="recruitment.manager" ng-click="vm.edit(beneficiary)"></td>
-                        <td class="md-table-button" ng-click="vm.delete(beneficiary)">
+                    <tr ng-repeat="(key, value) in vm.listOfRecruitments | orderBy: order | limitTo: vm.pagenation.limit : (vm.pagenation.page -1) * vm.pagenation.limit track by $index" class="hover">
+                        <td ng-bind="value.positionTitle" ng-click="view(value)"></td>
+                        <td ng-bind="value.closeDate | date:'HH:mm:ss'"  ng-click="view(value)"></td>
+                        <td ng-bind="value.department" ng-click="view(value)"></td>
+                        <td ng-bind="value.manager" ng-click="view(value)">{{key}}</td>
+                        <td class="md-table-button" ng-click="view(value)">
                             <md-button class="md-icon-button " aria-label="More">
                                 <md-icon md-font-icon="material-icons" class="md-font material-icons">search</md-icon>
                             </md-button>

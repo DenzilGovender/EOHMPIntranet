@@ -5,6 +5,13 @@
         var vm = this;
         vm.title = 'projectCreateController';
         var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Project");
+
+        $scope.create = function (project) {
+            var AddProject = $firebaseArray(ref);
+            project.openDate = project.openDate.toString();
+            project.closeDate = project.closeDate.toString();
+            AddProject.$add(project);
+        }
     }
 
     angular.module('EOHIntranet').controller('ProjectCreateController', ProjectCreateController);
