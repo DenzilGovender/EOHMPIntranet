@@ -20,9 +20,4 @@
                 text: comment
             });
         }
-        
-    }
-
-    angular.module('EOHIntranet').controller('ViewEventController', ViewEventController);
-    ViewEventController.$inject = ['$location', '$scope', '$firebaseObject', 'EventService'];
 })();

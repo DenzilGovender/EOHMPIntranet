@@ -5,15 +5,20 @@
         /* jshint validthis:true */
         var vm = this;
         vm.title = '';
-        //var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/User");
-        //ref.push({ name: 'Denzil' });
-        ////vm.Users.$add({ name: 'Denzil' }); 
+        vm.employee = {};
+        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/User");
 
-        //$scope.listOfUsers = $firebaseArray(ref.child('Users'));
 
-        //$scope.navigateTo = function (url) {
-        //    $location.path(url);
-        //}
+
+        $scope.listOfEmployees = $firebaseArray(ref.child('employee'));
+
+        vm.SearchEmployee = function () {
+
+        }
+
+        vm.viewEmployeeDetails = function (employee) {
+
+        }
 
     }
 

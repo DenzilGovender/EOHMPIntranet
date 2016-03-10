@@ -14,11 +14,33 @@
               templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
               controllerAs: 'vm'
           })
+            .when('/ViewEmployee', {
+                controller: 'ViewEmployeeController',
+                templateUrl: viewBase + '/employee/viewEmployee/viewEmployee.html',
+                controllerAs: 'vm'
+            })
+                        .when('/SearchEmployee', {
+                            controller: 'SearchEmployeeController',
+                            templateUrl: viewBase + '/employee/searchEmployee/searchEmployee.html',
+                            controllerAs: 'vm'
+                        })
+
+                                    .when('/CreateEmployee', {
+                                        controller: 'CreateEventController',
+                                        templateUrl: viewBase + '/employee/createEmployee/employeeCreate.html',
+
+             .when('/ViewRecruitment', {
+                 controller: 'RecruitmentViewController',
+                 templateUrl: viewBase + '/recruitment/viewRecruitment.html',
+                 controllerAs: 'vm'
+             })
             .when('/Employee', {
                           controller: 'AdmimRecruitmentCreateController',
                           templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
                           controllerAs: 'vm'
-            }).when('/CreateEvent', {
+                                    })
+
+            .when('/CreateEvent', {
                 controller: 'CreateEventController',
                 templateUrl: viewBase + '/event/create/createEvent.html',
                 controllerAs: 'vm'
@@ -33,8 +55,7 @@
                 templateUrl: viewBase + '/event/view/viewEvent.html',
                 controllerAs: 'vm'
             })
-            .otherwise({ redirectTo: '/' });
-          }).when('/CreateProject', {
+          .when('/CreateProject', {
               controller: 'ProjectCreateController',
               templateUrl: viewBase + '/project/project.create.html',
               controllerAs: 'vm'
