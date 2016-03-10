@@ -30,7 +30,7 @@
                 <md-button class="md-raised md-default" ng-click="vm.addEventComment(vm.comment)">Comment</md-button>
             </div>            
         </div>
-        <div layout="row" class="md-padding" ng-repeat="comment in vm.event.comments">
+        <div layout="row" class="md-padding" ng-repeat="comment in vm.event.comments track by $index">
             <p>{{comment}}</p>
         </div>
     </md-content>

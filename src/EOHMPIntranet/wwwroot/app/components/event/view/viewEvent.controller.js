@@ -13,12 +13,16 @@
         function init() {
             vm.event = EventService.getSelectedEvent();
             ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Event/" + vm.event.$id);
-            vm.comments = vm.event.comments;
+           
         }
 
         vm.addEventComment = function (comment) {
 
-            var oldEvent = $firebaseObject(ref);           
+            var oldEvent = $firebaseObject(ref);
+            vm.comments = vm.event.comments;
+            if (vm.comments == undefined) {
+                vm.comments = [];
+            }
             vm.comments.push(comment);                
             oldEvent.comments = vm.comments;      
             var event = (vm.comments, vm.event);
