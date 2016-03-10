@@ -8319,6 +8319,10 @@ overflow: hidden;
     font-size: 0.9em;
     margin-top: 10px; }
 
+.md-login {
+  background: url("../img/login_background.png") no-repeat center center !important;
+  background-size: cover !important; }
+
 .md-heading {
   color: #403F3F;
   -webkit-margin-before: 1.0em;
@@ -9334,8 +9338,6 @@ md-sidenav.md-locked-open {
   .profile-area p {
     font-size: 90%;
     color: #061556; }
-    .profile-area p:hover {
-      cursor: pointer; }
     .profile-area p span md-icon {
       color: #061556;
       font-size: 125%;
