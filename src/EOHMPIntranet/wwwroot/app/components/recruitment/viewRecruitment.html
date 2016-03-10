@@ -1,0 +1,35 @@
+﻿<md-content class="main-content md-padding page-content transparent">
+
+    <md-content class="box-shadow">
+        <md-data-table-container>
+            <table md-data-table md-progress="deferred">
+                <thead md-order="order">
+                    <tr>
+                        <th name="Position Title" order-by="name" ng-click="vm.sortData('companyName')"></th>
+                        <th name="Closing Date" order-by="country" ng-click="vm.sortData('description')"></th>
+                        <th name="Department" order-by="status" ng-click="vm.sortData('status')"></th>
+                        <th name="Manager" order-by="email" ng-click="vm.sortData('email')"></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="recruitment in vm.listOfRecruitments | orderBy: order | limitTo: vm.pagenation.limit : (vm.pagenation.page -1) * vm.pagenation.limit track by $index" class="hover">
+                        <td ng-bind="recruitment.positionTitle" ng-click="vm.edit(beneficiary)"></td>
+                        <td ng-bind="recruitment.closeDate | date:'HH:mm:ss'"  ng-click="vm.edit(beneficiary)"></td>
+                        <td ng-bind="recruitment.department" ng-click="vm.edit(beneficiary)"></td>
+                        <td ng-bind="recruitment.manager" ng-click="vm.edit(beneficiary)"></td>
+                        <td class="md-table-button" ng-click="vm.delete(beneficiary)">
+                            <md-button class="md-icon-button " aria-label="More">
+                                <md-icon md-font-icon="material-icons" class="md-font material-icons">search</md-icon>
+                            </md-button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <md-data-table-container>
+
+                <md-data-table-pagination md-limit="vm.pagenation.limit" md-page="vm.pagenation.page" md-total="{{vm.beneficiaries.length}}" md-page-select="vm.pagenation.pageSelector" md-boundary-links="vm.pagenation.boundaryLinks"></md-data-table-pagination>
+
+
+    </md-content>
+</md-content>
