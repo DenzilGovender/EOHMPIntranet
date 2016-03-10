@@ -14,12 +14,25 @@
               templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
               controllerAs: 'vm'
           })
-
-                      .when('/Employee', {
+            .when('/Employee', {
                           controller: 'AdmimRecruitmentCreateController',
                           templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
                           controllerAs: 'vm'
-                      })
+            }).when('/CreateEvent', {
+                controller: 'CreateEventController',
+                templateUrl: viewBase + '/event/create/createEvent.html',
+                controllerAs: 'vm'
+            })
+            .when('/Events', {
+                controller: 'ListEventController',
+                templateUrl: viewBase + '/event/list/listEvent.html',
+                controllerAs: 'vm'
+            })
+            .when('/ViewEvent', {
+                controller: 'ViewEventController',
+                templateUrl: viewBase + '/event/view/viewEvent.html',
+                controllerAs: 'vm'
+            })
             .otherwise({ redirectTo: '/' });
     }
 
