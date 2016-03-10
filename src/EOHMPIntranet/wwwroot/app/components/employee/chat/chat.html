@@ -1,0 +1,9 @@
+﻿<div layout="row" class="md-padding">
+    <input ng-model="vm.message" type="text" />
+    <div flex="50" layout="column" layout-align="start start">
+        <md-button class="md-raised md-default" ng-click="vm.addMessage(vm.message)">Comment</md-button>
+    </div>
+</div>
+<div layout="row" class="md-padding" ng-repeat="message in vm.messages track by $index">
+    <p>{{message.text}}</p>
+</div>
