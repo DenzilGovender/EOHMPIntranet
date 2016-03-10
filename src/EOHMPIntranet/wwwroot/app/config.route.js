@@ -41,6 +41,13 @@
                  templateUrl: viewBase + '/recruitment/recruitment.detail.html',
                  controllerAs: 'vm'
              })
+
+             .when('/login', {
+                 controller: 'LoginController',
+                 templateUrl: viewBase + '/login/login.html',
+                 controllerAs: 'vm'
+             })
+
             .when('/Employee', {
                           controller: 'AdmimRecruitmentCreateController',
                           templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
