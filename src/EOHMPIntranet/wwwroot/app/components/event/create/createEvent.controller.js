@@ -15,6 +15,7 @@
             var AddEvent = $firebaseArray(ref);
             var date = event.date;
             event.date = event.date.toString();
+            event.comments = [];
             AddEvent.$add(event);
             $mdToast.show(
                           $mdToast.simple()
