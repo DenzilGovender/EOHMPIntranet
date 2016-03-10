@@ -20,7 +20,7 @@
             </md-button>
         </div>
     </div>
-    <div layout="row" class="main-navigation">
+    <div layout="row" class="main-wrap">
         
         <md-sidenav md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2 md-sidenav-left gt-md-closed md-locked-open">
             <div flex layout="column">
@@ -85,7 +85,7 @@
             </div>
         </md-sidenav>
 
-        <div layout="row">
+        <div layout="row" layout-fill>
             <div layout="column" flex style="overflow: auto">
                 <div ng-view></div>
             </div>
