@@ -23,7 +23,7 @@
                 <tr ng-repeat="employee in vm.employees | filter: search" ng-click="viewEmployeeDetails(employee)">
                     <td><p class="md-currency-circle">{{employee.firstname}}</p></td>
                     <td>{{employee.lastname}}</td>
-                    <td><p class="md-currency-circle">{{employee.cellphone}}</p></td>
+                    <td>{{employee.cellphone}}</p></td>
                     <td>{{employee.title.TitleName}}</td>
                 </tr>
             </tbody>
