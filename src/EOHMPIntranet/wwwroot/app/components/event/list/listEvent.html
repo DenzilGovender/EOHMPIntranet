@@ -15,7 +15,7 @@
                 <tbody>
                     <tr ng-repeat="event in vm.events | limitTo: vm.pagenation.limit : (vm.pagenation.page -1) * vm.pagenation.limit | orderBy: userSorting track by $index" class="hover">
                         <td ng-click="vm.viewEvent(event)">{{event.name}}</td>
-                        <td ng-click="vm.viewEvent(event)">{{event.date}}</td>
+                        <td ng-click="vm.viewEvent(event)">{{event.date | date : "YYYY/MM/DD"}}</td>
                         <td ng-click="vm.viewEvent(event)">{{event.venue}}</td>
                         <td ng-click="vm.viewEvent(event)">{{event.type}}</td>
                         <td>
