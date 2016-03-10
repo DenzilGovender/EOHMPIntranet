@@ -9,7 +9,7 @@
 <body ng-controller="indexController" >
     <div class="md-home-toolbar md-padding" layout="row">
         <div flex layout="row" layout-align="start center">
-            <img src="assets/img/eoh_logo.png" height="50" />
+            <img src="assets/img/eoh_logo.png" height="55" />
         </div>
         <div flex layout="row" layout-align="end center">
             <md-button class="md-icon-button" aria-label="More">
@@ -38,7 +38,7 @@
                 <md-menu-sidenav>
 
 
-                    <md-menu-sidenav-item ng-click="navigateTo('/viewUsers')">
+                    <md-menu-sidenav-item ng-click="navigateTo('/dashboard')">
                         <md-menu-sidenav-title>
                             <h1 class="md-body-2" flex><span><md-icon>dashboard</md-icon></span>Dashboard</h1>
                         </md-menu-sidenav-title>
@@ -62,9 +62,9 @@
                         </md-menu-sidenav-title>
                     </md-menu-sidenav-item>
 
-                    <md-menu-sidenav-item ng-click="navigateTo('/viewUsers')">
+                    <md-menu-sidenav-item ng-click="navigateTo('/SearchEmployee')">
                         <md-menu-sidenav-title>
-                            <h1 class="md-body-2" flex><span><md-icon>face</md-icon></span>Buddy Find</h1>
+                            <h1 class="md-body-2" flex><span><md-icon>face</md-icon></span>Buddy Search</h1>
                         </md-menu-sidenav-title>
                     </md-menu-sidenav-item>
 
@@ -142,6 +142,7 @@
 <script src="app/components/login/login.controller.js"></script>
 <script src="app/components/recruitment/recruitmentservice.js"></script>
 <script src="app/components/employee/chat/chat.controller.js"></script>
+<script src="app/components/dashboard/dashboard.controller.js"></script>
 <script src="app/components/recruitment/recruitment.view.controller.js"></script>
 <script src="app/components/project/project.detail.controller.js"></script>
 <script src="app/components/recruitment/recruitment.detail.controller.js"></script>

@@ -3,7 +3,7 @@
 
 
 
-    function CreateEventController($location, $firebaseArray, $mdToast) {
+    function dashboardController($location, $firebaseArray, $mdToast) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'Create Event';
@@ -28,7 +28,7 @@
         }
     }
 
-    angular.module('EOHIntranet').controller('CreateEventController', CreateEventController);
-    CreateEventController.$inject = ['$location', '$firebaseArray', '$mdToast'];
+    angular.module('EOHIntranet').controller('dashboardController', dashboardController);
+    dashboardController.$inject = ['$location', '$firebaseArray', '$mdToast'];
 
 })();
