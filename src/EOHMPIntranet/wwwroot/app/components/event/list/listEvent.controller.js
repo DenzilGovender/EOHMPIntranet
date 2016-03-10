@@ -9,16 +9,16 @@
         vm.title = 'Events';
         vm.events = [];
 
-        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Event");
+        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com");
 
         init();
 
         function init() {
-            vm.events = $firebaseArray(ref.child('Events'));
+            vm.events = $firebaseArray(ref.child('Event'));
         }
 
-        vm.createEvent = function (event) {
-            $location.path('/createEvent');
+        vm.createEvent = function () {
+            $location.path('/CreateEvent');
         }
 
         vm.back = function () {
@@ -27,7 +27,7 @@
 
         vm.viewEvent = function (event) {
             EventService.assignSelectedEvent(event);
-            $location.path('/viewEvent');
+            $location.path('/ViewEvent');
         }
     }
 
