@@ -5,7 +5,7 @@
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'indexController';
-        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com");
+        var ref = new Firebase("https://eoh-intranet.firebaseio.com");
         vm.login = {};
         //ref.push({ name: 'Denzil' });
         ////vm.Users.$add({ name: 'Denzil' });
@@ -26,6 +26,18 @@
                 } else {
                     console.log("Authenticated successfully with payload:", authData);
                 }
+            });
+        }
+
+        $scope.loginWithFacebook = function (credentials) {
+
+            ref.authWithOAuthPopup("facebook", function (error, authData) {
+                if (error) {
+                    console.log("Login Failed!", error);
+                } else {
+                    console.log("Authenticated successfully with payload:", authData);
+                }
+
             });
         }
 
