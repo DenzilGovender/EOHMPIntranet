@@ -26,6 +26,10 @@
         vm.cancel = function () {
             $location.path('/Events');
         }
+
+        vm.navigateTo = function (url) {
+            $location.path(url);
+        }
     }
 
     angular.module('EOHIntranet').controller('dashboardController', dashboardController);
