@@ -10,9 +10,9 @@
         
         var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Employee");
         
-        $scope.selectedTitle = function (title) {
-            vm.employee.title = title;
-        }
+        //$scope.selectedTitle = function (title) {
+        //    vm.employee.title = title;
+        //}
 
         init();
          
