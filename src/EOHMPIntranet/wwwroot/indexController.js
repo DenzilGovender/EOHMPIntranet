@@ -5,11 +5,11 @@
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'indexController';
-       var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Recruitment");
-      // ref.push({ name: 'Denzil' });
-       //vm.Users.$add({ name: 'Denzil' });
+       var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Users");
+       vm.Users = $firebaseArray(ref);
+       vm.Users.$add({ name: 'Denzil' });
        
-       $scope.listOfUsers = $firebaseArray(ref.child('Users'));
+
 
         $scope.navigateTo = function (url) {
             $location.path(url);

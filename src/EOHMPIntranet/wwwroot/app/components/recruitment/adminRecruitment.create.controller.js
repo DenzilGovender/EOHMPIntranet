@@ -6,6 +6,7 @@
         var vm = this;
         vm.title = 'indexController';
         var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Recruitment");
+        vm.recruitment = {};
         //ref.push({ name: 'Denzil' });
         ////vm.Users.$add({ name: 'Denzil' });
 
@@ -14,6 +15,12 @@
         //$scope.navigateTo = function (url) {
         //    $location.path(url);
         //}
+
+        $scope.create = function(recruitment)
+        {
+            var AddRecruitment = $firebaseArray(ref);
+            AddRecruitment.$add(recruitment);
+        }
 
     }
 
