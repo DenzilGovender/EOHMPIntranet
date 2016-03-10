@@ -18,7 +18,7 @@
         }
          
         $scope.chat = function (employee) {
-            alert('yest');
+            $location.path('/chat');
         }
        
 

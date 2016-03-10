@@ -81,7 +81,11 @@
               controller: 'ProjectDetailController',
               templateUrl: viewBase + '/project/project.detail.html',
               controllerAs: 'vm'
-          }).otherwise({ redirectTo: '/' });
+          }).when('/chat', {
+              controller: 'ChatController',
+                templateUrl: viewBase + '/employee/chat/chat.html',
+                controllerAs: 'vm'
+            }).otherwise({ redirectTo: '/' });
     }
 
     angular.module('EOHIntranet').config(['$routeProvider', '$locationProvider', routeProvider]);
