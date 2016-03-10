@@ -3,11 +3,12 @@
 
 
 
-    function ListEventController($location, $scope, $firebaseObject, $firebaseArray, EventService, $mdToast) {
+    function ListEventController($location, $rootScope, $firebaseObject, $firebaseArray, EventService, $mdToast) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'Events';
         vm.events = [];
+        
 
         var ref = new Firebase("https://eoh-intranet.firebaseio.com");
 
@@ -15,6 +16,12 @@
 
         function init() {
             vm.events = $firebaseArray(ref.child('Event'));
+            if ($rootScope.userType == 'admin') {
+                vm.isAdmin = true;
+            } else {
+                vm.isAdmin = false;
+            }
+            
         }
 
         vm.createEvent = function () {
@@ -40,5 +47,5 @@
     }
 
     angular.module('EOHIntranet').controller('ListEventController', ListEventController);
-    ListEventController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'EventService', '$mdToast'];
+    ListEventController.$inject = ['$location', '$rootScope', '$firebaseObject', '$firebaseArray', 'EventService', '$mdToast'];
 })();

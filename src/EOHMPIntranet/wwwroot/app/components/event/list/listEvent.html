@@ -1,5 +1,5 @@
 ﻿<md-content class="main-content md-padding page-content transparent">
-    <input type="button" value="Add Event" ng-click="vm.createEvent()" />
+    <input type="button" value="Add Event" ng-click="vm.createEvent()" ng-if="vm.isAdmin" />
 
     <md-content class="box-shadow">
         <md-data-table-container>
@@ -18,8 +18,8 @@
                         <td ng-click="vm.viewEvent(event)">{{event.date | date : "YYYY/MM/DD"}}</td>
                         <td ng-click="vm.viewEvent(event)">{{event.venue}}</td>
                         <td ng-click="vm.viewEvent(event)">{{event.type}}</td>
-                        <td>
-                            <md-button class="md-icon-button" ng-click="vm.delectEvent(event)" aria-label="Delete">
+                        <td ng-if="vm.isAdmin">
+                            <md-button  class="md-icon-button" ng-click="vm.delectEvent(event)" aria-label="Delete">
                                 <md-icon md-font-icon="material-icons" class="md-font material-icons">delete</md-icon>
                             </md-button>
                         </td>
