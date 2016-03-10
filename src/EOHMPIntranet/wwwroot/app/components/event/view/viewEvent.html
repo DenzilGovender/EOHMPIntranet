@@ -25,9 +25,9 @@
             </div>            
         </div>
         <div layout="row" class="md-padding">
-            <input ng-model="comment" type="text"/>
+            <input ng-model="vm.comment" type="text"/>
             <div flex="50" layout="column" layout-align="start start">
-                <md-button class="md-raised md-default" ng-click="vm.addEventComment(comment)">Comment</md-button>
+                <md-button class="md-raised md-default" ng-click="vm.addEventComment(vm.comment)">Comment</md-button>
             </div>            
         </div>
         <div layout="row" class="md-padding" ng-repeat="comment in vm.event.comments">
