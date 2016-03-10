@@ -26,12 +26,12 @@
             <div flex layout="column">
                 <div class="md-padding profile-area margin-top-16" layout="column" layout-align="center center">
                     <div flex layout="row">
-                        <img class="profile-picture" src="assets/img/placeholder.png" />
+                        <img class="profile-picture" src={{profileImage}} />
                         <div class="online"></div>
                     </div>
                     <div flex layout="column" layout-align="center center">
-                        <p class="md-name">John Doe</p>
-                        <p class="md-email">denzil@eoh.co.za</p>
+                        <p class="md-name">{{displayName}}</p>
+                        <p class="md-email">{{idNumber}}</p>
                     </div>
                 </div>
                 
@@ -138,9 +138,11 @@
 <script src="app/components/employee/viewemployee/viewemployee.controller.js"></script>
 <script src="app/components/employee/searchemployee/searchemployee.controller.js"></script>
 <script src="app/components/employee/employeeservice.js"></script>
-
+<script src="app/components/login/login.controller.js"></script>
+<script src="app/components/recruitment/recruitmentservice.js"></script>
 <script src="app/components/recruitment/recruitment.view.controller.js"></script>
 <script src="app/components/project/project.detail.controller.js"></script>
+<script src="app/components/recruitment/recruitment.detail.controller.js"></script>
 <!--Services-->
 <script src="app/components/event/event.service.js"></script>
 
