@@ -6,6 +6,7 @@
         vm.title = 'projectViewController';
         var ref = new Firebase("https://eoh-intranet.firebaseio.com");
         vm.project = {};
+        vm.pagenation.page
 
         $firebaseArray(ref.child('Project')).$loaded().then(function (reponse) {
             vm.projects = reponse;
