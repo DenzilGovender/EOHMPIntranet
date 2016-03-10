@@ -6,7 +6,7 @@
         var vm = this;
         vm.title = 'View Event';
         var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Event");
-        
+
         init();
 
         function init() {
@@ -20,4 +20,5 @@
                 text: comment
             });
         }
+    }
 })();
