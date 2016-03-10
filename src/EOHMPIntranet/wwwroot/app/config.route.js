@@ -7,7 +7,7 @@
         $routeProvider.when('/index', {
             controller: 'IndexController',
             templateUrl: 'index.html',
-            controllerAs: 'vm'            
+            controllerAs: 'vm'
         })
           .when('/AdminRecruitment', {
               controller: 'AdmimRecruitmentCreateController',
@@ -19,26 +19,26 @@
                 templateUrl: viewBase + '/employee/viewEmployee/viewEmployee.html',
                 controllerAs: 'vm'
             })
-                        .when('/SearchEmployee', {
-                            controller: 'SearchEmployeeController',
-                            templateUrl: viewBase + '/employee/searchEmployee/searchEmployee.html',
-                            controllerAs: 'vm'
-                        })
-
-                                    .when('/CreateEmployee', {
-                                        controller: 'CreateEventController',
-                                        templateUrl: viewBase + '/employee/createEmployee/employeeCreate.html',
-                                    })
+            .when('/SearchEmployee', {
+                controller: 'SearchEmployeeController',
+                templateUrl: viewBase + '/employee/searchEmployee/searchEmployee.html',
+                controllerAs: 'vm'
+            })
+            .when('/CreateEmployee', {
+                controller: 'CreateEventController',
+                templateUrl: viewBase + '/employee/createEmployee/employeeCreate.html',
+                controllerAs: 'vm'
+            })
              .when('/ViewRecruitment', {
                  controller: 'RecruitmentViewController',
                  templateUrl: viewBase + '/recruitment/viewRecruitment.html',
                  controllerAs: 'vm'
              })
             .when('/Employee', {
-                          controller: 'AdmimRecruitmentCreateController',
-                          templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
-                          controllerAs: 'vm'
-                                    })
+                controller: 'AdmimRecruitmentCreateController',
+                templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
+                controllerAs: 'vm'
+            })
 
             .when('/CreateEvent', {
                 controller: 'CreateEventController',
@@ -67,6 +67,6 @@
     }
 
     angular.module('EOHIntranet').config(['$routeProvider', '$locationProvider', routeProvider]);
-    routeProvider.$inject = ['$routeProvider', '$locationProvider'];   
-   
+    routeProvider.$inject = ['$routeProvider', '$locationProvider'];
+
 })();
