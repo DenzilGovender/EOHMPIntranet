@@ -1,18 +1,20 @@
 ﻿(function () {
     'use strict';
 
-    function LoginController($location, $scope, $firebaseObject, $firebaseArray, $sessionStorage, $rootScope) {
+    function LoginController($location, $scope, $firebaseObject, $firebaseArray, $sessionStorage, $rootScope, LoginService) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'indexController';
         var ref = new Firebase("https://eoh-intranet.firebaseio.com");
         vm.login = {};
-        $rootScope.displayName = 'Name';
-        $rootScope.profileImage = '/app/assets/img/placeholder.png';
+       
+        $rootScope.profileImage = 'assets/img/placeholder.png';
         $rootScope.idNumber = '123456789';
+
+       // LoginService.setLoginDetails();
         //ref.push({ name: 'Denzil' });
         ////vm.Users.$add({ name: 'Denzil' });
-
+      
         //$scope.listOfUsers = $firebaseArray(ref.child('Users'));
 
         //$scope.navigateTo = function (url) {
@@ -29,11 +31,12 @@
                 } else {
                     $scope.$apply(function () {
                         console.log("Authenticated successfully with payload:", authData);
-                        $rootScope.isUserAuthenticated = true;
-                        $rootScope.displayName = 'Administrator';
-                        $rootScope.profileImage = '';
-                        $rootScope.idNumber = '123456789';
-                        $rootScope.userType = 'admin';
+                        $sessionStorage.isUserAuthenticated = true;
+                        $sessionStorage.displayName = 'Administrator';
+                        $sessionStorage.profileImage = '';
+                        $sessionStorage.idNumber = '123456789';
+                        $sessionStorage.userType = 'admin';
+                        LoginService.setLoginDetails();
                         $location.path('/ViewRecruitment');
                     });
                 }
@@ -49,10 +52,11 @@
                     $scope.$apply(function (){
                         console.log("Authenticated successfully with payload:", authData);
                     $sessionStorage.isUserAuthenticated = true;
-                    $rootScope.userType = 'employee';
-                    $rootScope.displayName = authData.facebook.displayName;
-                    $rootScope.profileImage = authData.facebook.profileImageURL;
-                    $rootScope.idNumber = authData.facebook.cachedUserProfile.id;
+                    $sessionStorage.userType = 'employee';
+                    $sessionStorage.displayName = authData.facebook.displayName;
+                    $sessionStorage.profileImage = authData.facebook.profileImageURL;
+                    $sessionStorage.idNumber = authData.facebook.cachedUserProfile.id;
+                    LoginService.setLoginDetails();
                     $location.path('/ViewRecruitment');
                     });
                    
@@ -64,5 +68,5 @@
     }
 
     angular.module('EOHIntranet').controller('LoginController', LoginController);
-    LoginController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', '$sessionStorage', '$rootScope'];
+    LoginController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', '$sessionStorage', '$rootScope', 'LoginService'];
 })();

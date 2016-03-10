@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function AdmimRecruitmentCreateController($location, $scope, $firebaseObject, $firebaseArray, alertDialogService) {
+    function AdmimRecruitmentCreateController($location, $scope, $firebaseObject, $firebaseArray, modal) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'indexController';
