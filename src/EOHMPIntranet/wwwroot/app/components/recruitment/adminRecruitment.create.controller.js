@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function AdmimRecruitmentCreateController($location, $scope, $firebaseObject, $firebaseArray) {
+    function AdmimRecruitmentCreateController($location, $scope, $firebaseObject, $firebaseArray, modal) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'indexController';
@@ -27,5 +27,5 @@
     }
 
     angular.module('EOHIntranet').controller('AdmimRecruitmentCreateController', AdmimRecruitmentCreateController);
-    AdmimRecruitmentCreateController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray'];
+    AdmimRecruitmentCreateController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'modal'];
 })();

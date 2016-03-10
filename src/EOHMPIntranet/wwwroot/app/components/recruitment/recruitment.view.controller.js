@@ -10,12 +10,16 @@
         //ref.push({ name: 'Denzil' });
         ////vm.Users.$add({ name: 'Denzil' });
 
-        vm.listOfRecruitments = $firebaseArray(ref.child('Recruitment'));
+     
+            $firebaseArray(ref.child('Recruitment')).$loaded().then(function (reponse) {
+        
+            vm.listOfRecruitments = reponse;
+            for (var i = 0; i < vm.listOfRecruitments.length; i++) {
+                vm.listOfRecruitments[i].closeDate = new Date(vm.listOfRecruitments[i].closeDate);
+            }
+        });
 
-        for (var i = 0; i < vm.listOfRecruitments.length; i++)
-        {
-            vm.listOfRecruitments[i].closeDate = Date.parse(vm.listOfRecruitments[i]);
-        }
+        
 
         //$scope.navigateTo = function (url) {
         //    $location.path(url);

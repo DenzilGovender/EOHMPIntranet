@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';   
 
-    function indexController($location, $scope, $firebaseObject, $firebaseArray, $rootScope, $sessionStorage) {
+    function indexController($location, $scope, $firebaseObject, $firebaseArray, $rootScope, $sessionStorage, LoginService) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'indexController';
@@ -10,7 +10,7 @@
        $scope.currentUrl = $location.path();
       // vm.Users.$add({ name: 'Denzil' });
        
-      
+       LoginService.setLoginDetails();
 
        if ($sessionStorage.isUserAuthenticated) {
            vm.userAuthenticated = true;
@@ -29,5 +29,5 @@
     }
 
     angular.module('EOHIntranet').controller('indexController', indexController);
-    indexController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', '$rootScope', '$sessionStorage'];
+    indexController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', '$rootScope', '$sessionStorage', 'LoginService'];
 })();
