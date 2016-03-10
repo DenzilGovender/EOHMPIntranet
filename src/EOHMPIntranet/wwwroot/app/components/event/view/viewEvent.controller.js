@@ -5,7 +5,8 @@
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'View Event';
-        
+        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Event");
+
         init();
 
         function init() {
@@ -13,11 +14,11 @@
         }
 
         vm.addEventComment = function (comment) {
-          
-        }
-        
-    }
+            vm.event.comments
 
-    angular.module('EOHIntranet').controller('ViewEventController', ViewEventController);
-    ViewEventController.$inject = ['$location', '$scope', '$firebaseObject', 'EventService'];
+            vm.event.comments.$add({
+                text: comment
+            });
+        }
+    }
 })();
