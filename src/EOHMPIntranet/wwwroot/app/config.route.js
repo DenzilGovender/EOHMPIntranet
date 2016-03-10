@@ -26,7 +26,7 @@
 
                                     .when('/CreateEmployee', {
                                         controller: 'EmployeeCreateController',
-                                        templateUrl: viewBase + '/employee/createEmployee/employeeCreate.html',
+                                        templateUrl: viewBase + '/employee/createEmployee/createEmployee.html',
                                         controllerAs: 'vm'
                                     })
 
@@ -81,7 +81,11 @@
               controller: 'ProjectDetailController',
               templateUrl: viewBase + '/project/project.detail.html',
               controllerAs: 'vm'
-          }).otherwise({ redirectTo: '/' });
+          }).when('/chat', {
+              controller: 'ChatController',
+                templateUrl: viewBase + '/employee/chat/chat.html',
+                controllerAs: 'vm'
+            }).otherwise({ redirectTo: '/' });
     }
 
     angular.module('EOHIntranet').config(['$routeProvider', '$locationProvider', routeProvider]);
