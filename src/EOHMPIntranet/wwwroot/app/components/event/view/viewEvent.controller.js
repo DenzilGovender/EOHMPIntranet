@@ -1,19 +1,23 @@
 ﻿(function () {
     'use strict';
 
-    angular
-        .module('app')
-        .controller('viewEvent', viewEvent);
-
-    viewEvent.$inject = ['$location']; 
-
-    function viewEvent($location) {
+    function ViewEventController($location, $scope, $firebaseObject, EventService) {
         /* jshint validthis:true */
         var vm = this;
-        vm.title = 'viewEvent';
+        vm.title = 'View Event';
+        
+        init();
 
-        activate();
+        function init() {
+            vm.event = EventService.getSelectedEvent();
+        }
 
-        function activate() { }
+        vm.addEventComment = function (comment) {
+          
+        }
+        
     }
+
+    angular.module('EOHIntranet').controller('ViewEventController', ViewEventController);
+    ViewEventController.$inject = ['$location', '$scope', '$firebaseObject', 'EventService'];
 })();
