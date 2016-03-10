@@ -1,0 +1,28 @@
+﻿<md-content class="main-content md-padding page-content transparent">
+    <md-data-table-container>
+        <table md-data-table md-progress="deferred">
+            <thead>
+                <tr>
+                    <th name="Project Name"></th>
+                    <th name="Customer"></th>
+                    <th name="Start Date"></th>
+                    <th name="End Date"></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="project in vm.projects">
+                    <td><p class="md-currency-circle">{{project.projectName}}</p></td>
+                    <td>{{project.customer}}</td>
+                    <td>{{project.openDate | date:'dd/MM/yyyy'}}</td>
+                    <td>{{project.closeDate | date:'dd/MM/yyyy'}}</td>
+                    <td class="md-table-button">
+                        <md-button class="md-icon-button" ng-click="vm.deleteQuote($index)">
+                            <md-icon md-font-icon="material-icons" class="md-font material-icons">delete</md-icon>
+                        </md-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </md-data-table-container>
+</md-content>
