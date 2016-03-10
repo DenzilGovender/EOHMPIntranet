@@ -1,1 +1,39 @@
-﻿project details
+﻿<md-content class="main-content md-padding page-content transparent">
+    <md-content layout="column" class="box-shadow" ng-if="vm.selectedQuoteRequestDetails.length != 0">
+        <div flex="auto" layout="row" class="md-padding margin-bottom-16">
+            <div flex="30" layout="column" layout-align="start start">
+                <h3 flex="100" ng-bind="vm.project.projectName" class="no-margin md-font-align-center-xs"></h3>
+            </div>
+            <div flex="70" layout="row" layout-align="start start">
+                <p flex ng-bind="vm.project.customer" class="no-margin md-font-align-left-xs"></p>
+            </div>
+        </div>
+    </md-content>
+    <md-content>
+        <md-data-table-container>
+            <table md-data-table md-progress="deferred" class="no-hover">
+                <thead md-order="query.order" md-trigger="onOrderChange">
+                    <tr>
+                        <th name="Name"></th>
+                        <th name="Surname"></th>
+                        <th name="Title"></th>
+                        <th name="Email Address"></th>
+                        <th name="Contact Number"></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="member in vm.project.members">
+                        <td>{{member.name}}</td>
+                        <td>{{member.surname}}</td>
+                        <td>{{member.tittle}}</td>
+                        <td>{{member.emailAddress}}</td>
+                        <td>{{member.contactNumber}}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </md-data-table-container>
+    </md-content>
+</md-content>
