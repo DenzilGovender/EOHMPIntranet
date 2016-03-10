@@ -34,6 +34,15 @@
                 controllerAs: 'vm'
             })
             .otherwise({ redirectTo: '/' });
+          }).when('/CreateProject', {
+              controller: 'ProjectCreateController',
+              templateUrl: viewBase + '/project/project.create.html',
+              controllerAs: 'vm'
+          }).when('/ProjectsView', {
+              controller: 'ProjectViewController',
+              templateUrl: viewBase + '/project/project.view.html',
+              controllerAs: 'vm'
+          }).otherwise({ redirectTo: '/' });
     }
 
     angular.module('EOHIntranet').config(['$routeProvider', '$locationProvider', routeProvider]);
