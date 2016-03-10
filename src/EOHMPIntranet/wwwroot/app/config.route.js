@@ -18,22 +18,34 @@
                 controller: 'ViewEmployeeController',
                 templateUrl: viewBase + '/employee/viewEmployee/viewEmployee.html',
                 controllerAs: 'vm'
-            })
-            .when('/SearchEmployee', {
-                controller: 'SearchEmployeeController',
-                templateUrl: viewBase + '/employee/searchEmployee/searchEmployee.html',
-                controllerAs: 'vm'
-            })
-            .when('/CreateEmployee', {
-                controller: 'CreateEventController',
-                templateUrl: viewBase + '/employee/createEmployee/employeeCreate.html',
-                controllerAs: 'vm'
-            })
+            }).when('/SearchEmployee', {
+                            controller: 'SearchEmployeeController',
+                            templateUrl: viewBase + '/employee/searchEmployee/searchEmployee.html',
+                            controllerAs: 'vm'
+                        }).when('/CreateEmployee', {
+                                        controller: 'CreateEventController',
+                                        templateUrl: viewBase + '/employee/createEmployee/employeeCreate.html',
+                                        controllerAs: 'vm'
+                                    })
+
              .when('/ViewRecruitment', {
                  controller: 'RecruitmentViewController',
                  templateUrl: viewBase + '/recruitment/viewRecruitment.html',
                  controllerAs: 'vm'
              })
+
+             .when('/RecruitmentDetail', {
+                 controller: 'RecruitmentDetailController',
+                 templateUrl: viewBase + '/recruitment/recruitment.detail.html',
+                 controllerAs: 'vm'
+             })
+
+             .when('/login', {
+                 controller: 'LoginController',
+                 templateUrl: viewBase + '/login/login.html',
+                 controllerAs: 'vm'
+             })
+
             .when('/Employee', {
                 controller: 'AdmimRecruitmentCreateController',
                 templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
@@ -62,6 +74,10 @@
           }).when('/ProjectsView', {
               controller: 'ProjectViewController',
               templateUrl: viewBase + '/project/project.view.html',
+              controllerAs: 'vm'
+          }).when('/ProjectDetail', {
+              controller: 'ProjectDetailController',
+              templateUrl: viewBase + '/project/project.detail.html',
               controllerAs: 'vm'
           }).otherwise({ redirectTo: '/' });
     }

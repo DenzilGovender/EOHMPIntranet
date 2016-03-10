@@ -1,11 +1,11 @@
 ﻿(function () {
     'use strict';
 
-    function RecruitmentViewController($location, $scope, $firebaseObject, $firebaseArray) {
+    function RecruitmentViewController($location, $scope, $firebaseObject, $firebaseArray, RecruitmentService) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'indexController';
-        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com");
+        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/");
         vm.recruitment = {};
         //ref.push({ name: 'Denzil' });
         ////vm.Users.$add({ name: 'Denzil' });
@@ -21,15 +21,13 @@
         //    $location.path(url);
         //}
 
-        $scope.create = function (recruitment) {
-            var AddRecruitment = $firebaseArray(ref);
-            recruitment.openDate = recruitment.openDate.toString();
-            recruitment.closeDate = recruitment.closeDate.toString();
-            AddRecruitment.$add(recruitment);
+        $scope.view = function (recruitment) {
+            RecruitmentService.assignCurrentRecruitment(recruitment);
+            $location.path('/RecruitmentDetail');
         }
 
     }
 
     angular.module('EOHIntranet').controller('RecruitmentViewController', RecruitmentViewController);
-    RecruitmentViewController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray'];
+    RecruitmentViewController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'RecruitmentService'];
 })();
