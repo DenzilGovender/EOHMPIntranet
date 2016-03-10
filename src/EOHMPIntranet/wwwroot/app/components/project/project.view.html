@@ -28,7 +28,12 @@
                 </tbody>
             </table>
             <md-data-table-container>
-                <md-data-table-pagination md-limit="vm.pagenation.limit" md-page="vm.pagenation.page" md-total="{{vm.beneficiaries.length}}" md-page-select="vm.pagenation.pageSelector" md-boundary-links="vm.pagenation.boundaryLinks"></md-data-table-pagination>
+                <!--<md-data-table-pagination md-limit="vm.pagenation.limit" md-page="vm.pagenation.page" md-total="{{vm.projects.length}}" md-page-select="vm.pagenation.pageSelector" md-boundary-links="vm.pagenation.boundaryLinks"></md-data-table-pagination>-->
             </md-data-table-container>
+    </md-content>
+    <md-content class="md-padding">
+        <div flex layout="row" layout-align="end end">
+            <md-button class="md-primary md-primary-custom" ng-click="vm.newProject()">New Project</md-button>
+        </div>
     </md-content>
 </md-content>

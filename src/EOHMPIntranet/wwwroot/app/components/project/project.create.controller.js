@@ -1,19 +1,26 @@
 ﻿(function () {
     'use strict';
 
-    function ProjectCreateController($location, $scope, $firebaseObject, $firebaseArray) {
+    function ProjectCreateController($location, $scope, $firebaseObject, $firebaseArray, modal) {
         var vm = this;
         vm.title = 'projectCreateController';
-        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Project");
+        var ref = new Firebase("https://eoh-intranet.firebaseio.com/Project");
 
         $scope.create = function (project) {
             var AddProject = $firebaseArray(ref);
             project.openDate = project.openDate.toString();
             project.closeDate = project.closeDate.toString();
+            project.members = [{}];
+            project.technologies = [{}];
+
             AddProject.$add(project);
         }
+
+        $scope.closeModal = function () {
+            modal.hide();
+        };
     }
 
     angular.module('EOHIntranet').controller('ProjectCreateController', ProjectCreateController);
-    ProjectCreateController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray'];
+    ProjectCreateController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'modal'];
 })();

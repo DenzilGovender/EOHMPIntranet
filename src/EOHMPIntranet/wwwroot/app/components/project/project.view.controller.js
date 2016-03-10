@@ -1,10 +1,10 @@
 ﻿(function () {
     'use strict';
 
-    function ProjectViewController($location, $scope, $firebaseObject, $firebaseArray, ProjectService) {
+    function ProjectViewController($location, $scope, $firebaseObject, $firebaseArray, ProjectService, modal) {
         var vm = this;
         vm.title = 'projectViewController';
-        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com");
+        var ref = new Firebase("https://eoh-intranet.firebaseio.com");
         vm.project = {};
 
         $firebaseArray(ref.child('Project')).$loaded().then(function (reponse) {
@@ -19,8 +19,13 @@
             ProjectService.assignCurrentRecruitment(project);
             $location.path('/ProjectDetail');
         }
+
+        vm.newProject = function () {
+            var templateUrl = '/app/components/project/project.create.html';
+            modal.show(templateUrl, 'ProjectCreateController');
+        }
     }
 
     angular.module('EOHIntranet').controller('ProjectViewController', ProjectViewController);
-    ProjectViewController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'ProjectService'];
+    ProjectViewController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'ProjectService', 'modal'];
 })();

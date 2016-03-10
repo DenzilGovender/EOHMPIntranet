@@ -7,7 +7,7 @@
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'Create Event';
-        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Event");
+        var ref = new Firebase("https://eoh-intranet.firebaseio.com/Event");
         vm.minDate = new Date();
 
         vm.saveEmployee = function () {

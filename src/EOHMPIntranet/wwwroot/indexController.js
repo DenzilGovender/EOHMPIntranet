@@ -1,14 +1,24 @@
 ﻿(function () {
     'use strict';   
 
-    function indexController($location, $scope, $firebaseObject, $firebaseArray) {
+    function indexController($location, $scope, $firebaseObject, $firebaseArray, $rootScope, $sessionStorage) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'indexController';
-       var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Users");
+       var ref = new Firebase("https://eoh-intranet.firebaseio.com/Users");
        vm.Users = $firebaseArray(ref);
       // vm.Users.$add({ name: 'Denzil' });
        
+      
+
+       if ($sessionStorage.isUserAuthenticated) {
+           vm.userAuthenticated = true;
+
+       }
+       else {
+           vm.userAuthenticated = false;
+           $location.path('/login');
+       }
 
 
         $scope.navigateTo = function (url) {
@@ -18,5 +28,5 @@
     }
 
     angular.module('EOHIntranet').controller('indexController', indexController);
-    indexController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray'];
+    indexController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', '$rootScope', '$sessionStorage'];
 })();
