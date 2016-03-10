@@ -24,7 +24,6 @@
                             templateUrl: viewBase + '/employee/searchEmployee/searchEmployee.html',
                             controllerAs: 'vm'
                         })
-
                                     .when('/CreateEmployee', {
                                         controller: 'CreateEventController',
                                         templateUrl: viewBase + '/employee/createEmployee/employeeCreate.html',

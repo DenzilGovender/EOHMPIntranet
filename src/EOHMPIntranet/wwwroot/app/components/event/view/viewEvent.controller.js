@@ -1,19 +1,24 @@
 ﻿(function () {
     'use strict';
 
-    angular
-        .module('EOHIntranet')
-        .controller('viewEvent', viewEvent);
-
-    viewEvent.$inject = ['$location']; 
-
-    function viewEvent($location) {
+    function ViewEventController($location, $scope, $firebaseObject, EventService) {
         /* jshint validthis:true */
         var vm = this;
-        vm.title = 'viewEvent';
+        vm.title = 'View Event';
+        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Event");
 
-        activate();
+        init();
 
-        function activate() { }
+        function init() {
+            vm.event = EventService.getSelectedEvent();
+        }
+
+        vm.addEventComment = function (comment) {
+            vm.event.comments
+
+            vm.event.comments.$add({
+                text: comment
+            });
+        }
     }
 })();
