@@ -26,8 +26,9 @@
                         })
 
                                     .when('/CreateEmployee', {
-                                        controller: 'CreateEventController',
+                                        controller: 'EmployeeCreateController',
                                         templateUrl: viewBase + '/employee/createEmployee/employeeCreate.html',
+                                    })
 
              .when('/ViewRecruitment', {
                  controller: 'RecruitmentViewController',
