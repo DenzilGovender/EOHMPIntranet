@@ -4,7 +4,7 @@
     function ProjectViewController($location, $scope, $firebaseObject, $firebaseArray, ProjectService) {
         var vm = this;
         vm.title = 'projectViewController';
-        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com");
+        var ref = new Firebase("https://eoh-intranet.firebaseio.com");
         vm.project = {};
         vm.pagenation.page
 

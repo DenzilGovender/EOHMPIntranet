@@ -7,11 +7,89 @@
 
 </head>
 <body ng-controller="indexController" >
-    <div layout="row" class="layout-fill"> 
+    <div class="md-home-toolbar md-padding" layout="row">
+        <div flex layout="row" layout-align="start center">
+            <img src="assets/img/eoh_logo.png" height="50" />
+        </div>
+        <div flex layout="row" layout-align="end center">
+            <md-button class="md-icon-button" aria-label="More">
+                <md-icon>notifications</md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="More">
+                <md-icon>reply</md-icon>
+            </md-button>
+        </div>
+    </div>
+    <div layout="row" class="main-wrap">
+        
+        <md-sidenav md-is-locked-open="$mdMedia('gt-md')" md-component-id="left" class="md-whiteframe-z2 md-sidenav-left gt-md-closed md-locked-open">
+            <div flex layout="column">
+                <div class="md-padding profile-area margin-top-16" layout="column" layout-align="center center">
+                    <div flex layout="row">
+                        <img class="profile-picture" src="assets/img/placeholder.png" />
+                        <div class="online"></div>
+                    </div>
+                    <div flex layout="column" layout-align="center center">
+                        <p class="md-name">John Doe</p>
+                        <p class="md-email">denzil@eoh.co.za</p>
+                    </div>
+                </div>
+                
+                <md-menu-sidenav>
+
+
+                    <md-menu-sidenav-item ng-click="navigateTo('/viewUsers')">
+                        <md-menu-sidenav-title>
+                            <h1 class="md-body-2" flex><span><md-icon>dashboard</md-icon></span>Dashboard</h1>
+                        </md-menu-sidenav-title>
+                    </md-menu-sidenav-item>
+
+                    <md-menu-sidenav-item ng-click="navigateTo('/ViewRecruitment')">
+                        <md-menu-sidenav-title>
+                            <h1 class="md-body-2" flex><span><md-icon>business_center</md-icon></span>Internal Recruitment</h1>
+                        </md-menu-sidenav-title>
+                    </md-menu-sidenav-item>
+
+                    <md-menu-sidenav-item ng-click="navigateTo('/ProjectsView')">
+                        <md-menu-sidenav-title>
+                            <h1 class="md-body-2" flex><span><md-icon>code</md-icon></span>Projects</h1>
+                        </md-menu-sidenav-title>
+                    </md-menu-sidenav-item>
+                    
+                    <md-menu-sidenav-item ng-click="navigateTo('/Events')">
+                        <md-menu-sidenav-title>
+                            <h1 class="md-body-2" flex><span><md-icon>toys</md-icon></span>Events</h1>
+                        </md-menu-sidenav-title>
+                    </md-menu-sidenav-item>
+
+                    <md-menu-sidenav-item ng-click="navigateTo('/viewUsers')">
+                        <md-menu-sidenav-title>
+                            <h1 class="md-body-2" flex><span><md-icon>face</md-icon></span>Buddy Find</h1>
+                        </md-menu-sidenav-title>
+                    </md-menu-sidenav-item>
+
+                    <md-menu-sidenav-item ng-click="navigateTo('/viewUsers')">
+                        <md-menu-sidenav-title>
+                            <h1 class="md-body-2" flex><span><md-icon>forum</md-icon></span>@Chat</h1>
+                        </md-menu-sidenav-title>
+                    </md-menu-sidenav-item>
+
+                    <md-menu-sidenav-item ng-click="navigateTo('/viewUsers')">
+                        <md-menu-sidenav-title>
+                            <h1 class="md-body-2" flex><span><md-icon>live_help</md-icon></span>FAQ</h1>
+                        </md-menu-sidenav-title>
+                    </md-menu-sidenav-item>
+                    
+                </md-menu-sidenav>
+
+            </div>
+        </md-sidenav>
       
+        <div layout="row" layout-fill>
         <div layout="column" flex style="overflow: auto">
             <div ng-view></div>
         </div>
+    </div>
     </div>
 </body>
 </html>
@@ -60,13 +138,11 @@
 <script src="app/components/employee/viewemployee/viewemployee.controller.js"></script>
 <script src="app/components/employee/searchemployee/searchemployee.controller.js"></script>
 <script src="app/components/employee/employeeservice.js"></script>
-<script src="app/components/recruitment/recruitmentservice.js"></script>
-<script src="app/components/recruitment/recruitment.detail.controller.js"></script>
-<script src="app/components/login/login.controller.js"></script>
+
 <script src="app/components/recruitment/recruitment.view.controller.js"></script>
 <script src="app/components/project/project.detail.controller.js"></script>
 <!--Services-->
 <script src="app/components/event/event.service.js"></script>
-<script src="app/components/project/projectservice.js"></script>
+
 
 <!--helpers-->

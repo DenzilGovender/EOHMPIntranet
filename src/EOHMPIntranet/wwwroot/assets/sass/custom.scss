@@ -503,3 +503,20 @@ overflow: hidden;
     }
     
 }
+
+
+// INTRANET CUSTOM CSS
+
+.md-home-toolbar {
+    background-color: $ci-blue!important;
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    .md-button{
+        md-icon{
+            color: $ci-white;
+        }  
+    }
+}
+
+

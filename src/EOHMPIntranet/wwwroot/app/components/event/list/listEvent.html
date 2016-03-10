@@ -13,11 +13,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="event in vm.events | limitTo: vm.pagenation.limit : (vm.pagenation.page -1) * vm.pagenation.limit | orderBy: userSorting track by $index" class="hover" ng-click="vm.viewEvent(event)">
-                        <td>{{event.name}}</td>
-                        <td>{{event.date}}</td>
-                        <td>{{event.venue}}</td>
-                        <td>{{event.type}}</td>
+                    <tr ng-repeat="event in vm.events | limitTo: vm.pagenation.limit : (vm.pagenation.page -1) * vm.pagenation.limit | orderBy: userSorting track by $index" class="hover">
+                        <td ng-click="vm.viewEvent(event)">{{event.name}}</td>
+                        <td ng-click="vm.viewEvent(event)">{{event.date}}</td>
+                        <td ng-click="vm.viewEvent(event)">{{event.venue}}</td>
+                        <td ng-click="vm.viewEvent(event)">{{event.type}}</td>
+                        <td>
+                            <md-button class="md-icon-button" ng-click="vm.delectEvent(event)" aria-label="Delete">
+                                <md-icon md-font-icon="material-icons" class="md-font material-icons">delete</md-icon>
+                            </md-button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

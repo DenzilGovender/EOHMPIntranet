@@ -4,7 +4,7 @@
     function ProjectCreateController($location, $scope, $firebaseObject, $firebaseArray) {
         var vm = this;
         vm.title = 'projectCreateController';
-        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Project");
+        var ref = new Firebase("https://eoh-intranet.firebaseio.com/Project");
 
         $scope.create = function (project) {
             var AddProject = $firebaseArray(ref);

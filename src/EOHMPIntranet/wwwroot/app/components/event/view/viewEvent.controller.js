@@ -12,7 +12,7 @@
 
         function init() {
             vm.event = EventService.getSelectedEvent();
-            ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Event/" + vm.event.$id);
+            ref = new Firebase("https://eoh-intranet.firebaseio.com/Event/" + vm.event.$id);
            
         }
 
