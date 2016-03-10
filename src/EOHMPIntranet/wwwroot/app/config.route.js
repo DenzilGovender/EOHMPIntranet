@@ -7,12 +7,33 @@
         $routeProvider.when('/index', {
             controller: 'IndexController',
             templateUrl: 'index.html',
-            controllerAs: 'vm'
+            controllerAs: 'vm'            
         })
           .when('/AdminRecruitment', {
               controller: 'AdmimRecruitmentCreateController',
               templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
               controllerAs: 'vm'
+          })
+            .when('/Employee', {
+                          controller: 'AdmimRecruitmentCreateController',
+                          templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
+                          controllerAs: 'vm'
+            }).when('/CreateEvent', {
+                controller: 'CreateEventController',
+                templateUrl: viewBase + '/event/create/createEvent.html',
+                controllerAs: 'vm'
+            })
+            .when('/Events', {
+                controller: 'ListEventController',
+                templateUrl: viewBase + '/event/list/listEvent.html',
+                controllerAs: 'vm'
+            })
+            .when('/ViewEvent', {
+                controller: 'ViewEventController',
+                templateUrl: viewBase + '/event/view/viewEvent.html',
+                controllerAs: 'vm'
+            })
+            .otherwise({ redirectTo: '/' });
           }).when('/CreateProject', {
               controller: 'ProjectCreateController',
               templateUrl: viewBase + '/project/project.create.html',
@@ -25,6 +46,6 @@
     }
 
     angular.module('EOHIntranet').config(['$routeProvider', '$locationProvider', routeProvider]);
-    routeProvider.$inject = ['$routeProvider', '$locationProvider'];
-
+    routeProvider.$inject = ['$routeProvider', '$locationProvider'];   
+   
 })();

@@ -8,7 +8,7 @@
 </head>
 <body ng-controller="indexController" >
     <div layout="row" class="layout-fill"> 
-       
+      
         <div layout="column" flex style="overflow: auto">
             <div ng-view></div>
         </div>
@@ -51,10 +51,14 @@
 <!--Controllers-->
 <script src="indexcontroller.js"></script>
 <script src="app/components/recruitment/adminrecruitment.create.controller.js"></script>
+<script src="app/components/event/create/createevent.controller.js"></script>
+<script src="app/components/event/list/listevent.controller.js"></script>
+<script src="app/components/event/view/viewevent.controller.js"></script>
 <script src="app/components/project/project.create.controller.js"></script>
 <script src="app/components/project/project.view.controller.js"></script>
 
 <!--Services-->
+<script src="app/components/event/event.service.js"></script>
 
 
 <!--helpers-->
