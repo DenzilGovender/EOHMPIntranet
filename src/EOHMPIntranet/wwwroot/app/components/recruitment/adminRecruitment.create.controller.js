@@ -19,6 +19,8 @@
         $scope.create = function(recruitment)
         {
             var AddRecruitment = $firebaseArray(ref);
+            recruitment.openDate = recruitment.openDate.toString();
+            recruitment.closeDate = recruitment.closeDate.toString();
             AddRecruitment.$add(recruitment);
         }
 

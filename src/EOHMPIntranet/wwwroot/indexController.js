@@ -7,7 +7,7 @@
         vm.title = 'indexController';
        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Users");
        vm.Users = $firebaseArray(ref);
-       vm.Users.$add({ name: 'Denzil' });
+      // vm.Users.$add({ name: 'Denzil' });
        
 
 
