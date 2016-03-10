@@ -7,7 +7,7 @@
         $routeProvider.when('/index', {
             controller: 'IndexController',
             templateUrl: 'index.html',
-            controllerAs: 'vm'            
+            controllerAs: 'vm'
         })
           .when('/AdminRecruitment', {
               controller: 'AdmimRecruitmentCreateController',
@@ -18,13 +18,11 @@
                 controller: 'ViewEmployeeController',
                 templateUrl: viewBase + '/employee/viewEmployee/viewEmployee.html',
                 controllerAs: 'vm'
-            })
-                        .when('/SearchEmployee', {
+            }).when('/SearchEmployee', {
                             controller: 'SearchEmployeeController',
                             templateUrl: viewBase + '/employee/searchEmployee/searchEmployee.html',
                             controllerAs: 'vm'
-                        })
-                                    .when('/CreateEmployee', {
+                        }).when('/CreateEmployee', {
                                         controller: 'CreateEventController',
                                         templateUrl: viewBase + '/employee/createEmployee/employeeCreate.html',
                                         controllerAs: 'vm'
@@ -49,10 +47,10 @@
              })
 
             .when('/Employee', {
-                          controller: 'AdmimRecruitmentCreateController',
-                          templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
-                          controllerAs: 'vm'
-                                    })
+                controller: 'AdmimRecruitmentCreateController',
+                templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
+                controllerAs: 'vm'
+            })
 
             .when('/CreateEvent', {
                 controller: 'CreateEventController',
@@ -77,10 +75,14 @@
               controller: 'ProjectViewController',
               templateUrl: viewBase + '/project/project.view.html',
               controllerAs: 'vm'
+          }).when('/ProjectDetail', {
+              controller: 'ProjectDetailController',
+              templateUrl: viewBase + '/project/project.detail.html',
+              controllerAs: 'vm'
           }).otherwise({ redirectTo: '/' });
     }
 
     angular.module('EOHIntranet').config(['$routeProvider', '$locationProvider', routeProvider]);
-    routeProvider.$inject = ['$routeProvider', '$locationProvider'];   
-   
+    routeProvider.$inject = ['$routeProvider', '$locationProvider'];
+
 })();
