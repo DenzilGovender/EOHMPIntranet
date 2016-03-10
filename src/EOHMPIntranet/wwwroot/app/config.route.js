@@ -14,6 +14,12 @@
               templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
               controllerAs: 'vm'
           })
+
+                      .when('/Employee', {
+                          controller: 'AdmimRecruitmentCreateController',
+                          templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
+                          controllerAs: 'vm'
+                      })
             .otherwise({ redirectTo: '/' });
     }
 
