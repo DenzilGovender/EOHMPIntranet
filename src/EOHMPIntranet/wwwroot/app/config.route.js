@@ -32,8 +32,6 @@
                 controller: 'ViewEventController',
                 templateUrl: viewBase + '/event/view/viewEvent.html',
                 controllerAs: 'vm'
-            })
-            .otherwise({ redirectTo: '/' });
           }).when('/CreateProject', {
               controller: 'ProjectCreateController',
               templateUrl: viewBase + '/project/project.create.html',
