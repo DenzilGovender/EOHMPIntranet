@@ -3,7 +3,7 @@
 
 
 
-    function ListEventController($location, $scope, $firebaseObject, $firebaseArray, EventService) {
+    function ListEventController($location, $scope, $firebaseObject, $firebaseArray, EventService, $mdToast) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'Events';
@@ -25,6 +25,14 @@
             $location.path('/dashboard');
         }
 
+        vm.delectEvent = function (event) {
+            vm.events.$remove(event);
+            $mdToast.show(
+                         $mdToast.simple()
+                         .textContent('Event is removed successfully!')
+                         .hideDelay(3000));
+        }
+
         vm.viewEvent = function (event) {
             EventService.assignSelectedEvent(event);
             $location.path('/ViewEvent');
@@ -32,5 +40,5 @@
     }
 
     angular.module('EOHIntranet').controller('ListEventController', ListEventController);
-    ListEventController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'EventService'];
+    ListEventController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'EventService', '$mdToast'];
 })();

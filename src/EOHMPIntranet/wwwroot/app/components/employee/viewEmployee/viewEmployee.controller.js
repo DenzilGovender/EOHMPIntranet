@@ -1,27 +1,32 @@
 ﻿(function () {
     'use strict';
 
-    function ViewEmployeeController($location, $scope, $firebaseObject, $firebaseArray) {
+    function ViewEmployeeController($location, $scope, $firebaseObject, $firebaseArray, EmployeeService) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = '';
-        vm.employee = {};
-        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/User");
+        $scope.employee = {};
+        
 
+        //var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/User");
 
+        init();
 
-        $scope.listOfEmployees = $firebaseArray(ref.child('employee'));
-
-        vm.SearchEmployee = function () {
-
+        function init() {
+            EmployeeService.employeeDetail;
+            $scope.employee = EmployeeService.getEmployee();
         }
-
-        vm.viewEmployeeDetails = function (employee) {
-
+         
+        $scope.chat = function (employee) {
+            alert('yest');
         }
+       
+
+       
+
 
     }
 
     angular.module('EOHIntranet').controller('ViewEmployeeController', ViewEmployeeController);
-    ViewEmployeeController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray'];
+    ViewEmployeeController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'EmployeeService'];
 })();

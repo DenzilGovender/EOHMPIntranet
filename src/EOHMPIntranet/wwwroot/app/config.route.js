@@ -18,14 +18,14 @@
                 controller: 'ViewEmployeeController',
                 templateUrl: viewBase + '/employee/viewEmployee/viewEmployee.html',
                 controllerAs: 'vm'
-            })
-                        .when('/SearchEmployee', {
+            }).when('/SearchEmployee', {
                             controller: 'SearchEmployeeController',
                             templateUrl: viewBase + '/employee/searchEmployee/searchEmployee.html',
                             controllerAs: 'vm'
                         })
+
                                     .when('/CreateEmployee', {
-                                        controller: 'CreateEventController',
+                                        controller: 'EmployeeCreateController',
                                         templateUrl: viewBase + '/employee/createEmployee/employeeCreate.html',
                                         controllerAs: 'vm'
                                     })
@@ -76,6 +76,10 @@
           }).when('/ProjectsView', {
               controller: 'ProjectViewController',
               templateUrl: viewBase + '/project/project.view.html',
+              controllerAs: 'vm'
+          }).when('/ProjectDetail', {
+              controller: 'ProjectDetailController',
+              templateUrl: viewBase + '/project/project.detail.html',
               controllerAs: 'vm'
           }).otherwise({ redirectTo: '/' });
     }
