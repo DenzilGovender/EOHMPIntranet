@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('EOHIntranet')
         .controller('viewEvent', viewEvent);
 
     viewEvent.$inject = ['$location']; 
