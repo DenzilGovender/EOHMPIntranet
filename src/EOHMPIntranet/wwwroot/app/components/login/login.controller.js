@@ -37,7 +37,7 @@
                         $sessionStorage.idNumber = '123456789';
                         $sessionStorage.userType = 'admin';
                         LoginService.setLoginDetails();
-                        $location.path('/ViewRecruitment');
+                        $location.path('/dashboard');
                     });
                 }
             });
@@ -57,7 +57,7 @@
                     $sessionStorage.profileImage = authData.facebook.profileImageURL;
                     $sessionStorage.idNumber = authData.facebook.cachedUserProfile.id;
                     LoginService.setLoginDetails();
-                    $location.path('/ViewRecruitment');
+                    $location.path('/dashboard');
                     });
                    
                 }

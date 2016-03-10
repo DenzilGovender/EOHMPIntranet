@@ -7,7 +7,7 @@
         vm.title = 'indexController';
        var ref = new Firebase("https://eoh-intranet.firebaseio.com/Users");
        vm.Users = $firebaseArray(ref);
-       $scope.currentUrl = $location.path();
+       
       // vm.Users.$add({ name: 'Denzil' });
        
        LoginService.setLoginDetails();
