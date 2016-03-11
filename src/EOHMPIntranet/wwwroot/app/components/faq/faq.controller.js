@@ -19,6 +19,12 @@
          
         }
 
+        vm.video = function(e)
+        {
+            var videoElements = angular.element(e.srcElement);
+            videoElements[0].pause();
+        }
+
        
     }
 
