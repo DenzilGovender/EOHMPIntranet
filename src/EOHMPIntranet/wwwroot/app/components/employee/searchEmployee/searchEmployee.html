@@ -28,8 +28,10 @@
                         <td ng-click="viewEmployeeDetails(employee)">{{employee.lastname}}</td>
                         <td ng-click="viewEmployeeDetails(employee)">{{employee.title.TitleName}}</td>
                         <td ng-click="viewEmployeeDetails(employee)">{{employee.cellphone}}</td>
-                        <td class="md-table-text-button" ><!--add delete funtion-->
-                            <p ng-click="vm.removeUser(employee)">remove</p>
+                        <td class="md-table-button">
+                            <md-button class="md-icon-button " aria-label="More">
+                                <md-icon md-font-icon="material-icons" class="md-font material-icons">search</md-icon>
+                            </md-button>
                         </td>
 
                 </tr>
