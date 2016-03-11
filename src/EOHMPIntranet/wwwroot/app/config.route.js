@@ -24,7 +24,7 @@
 
             .when('/ViewEmployee', {
                 controller: 'ViewEmployeeController',
-                templateUrl: viewBase + '/employee/viewEmployee/viewEmployee.html',
+                templateUrl: viewBase + '/employee/viewEmployee/viewEmployee.template.html',
                 controllerAs: 'vm'
         })
 
@@ -97,6 +97,10 @@
         .when('/ProjectDetail', {
               controller: 'ProjectDetailController',
               templateUrl: viewBase + '/project/project.detail.html',
+              controllerAs: 'vm'
+          }).when('/ProjectAddMember', {
+              controller: 'ProjectAddMemberController',
+              templateUrl: viewBase + '/project/project.addMember.html',
               controllerAs: 'vm'
           }).when('/chat', {
               controller: 'ChatController',

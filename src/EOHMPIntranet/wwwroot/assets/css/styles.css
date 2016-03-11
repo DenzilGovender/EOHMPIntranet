@@ -8322,6 +8322,23 @@ overflow: hidden;
 .md-login {
   background: url("../img/login_background.png") no-repeat center center !important;
   background-size: cover !important; }
+  .md-login md-input-container .md-input {
+    border-color: #fff !important;
+    color: #fff !important; }
+  .md-login .md-input-focused label {
+    color: #fff !important; }
+  .md-login md-icon {
+    color: #fff; }
+  .md-login .md-login-facebook button {
+    background-color: transparent;
+    border: 1px solid #FFF;
+    width: 100%; }
+    .md-login .md-login-facebook button:hover {
+      border-color: #e6e7e8; }
+  .md-login .md-login-button button {
+    background-color: transparent;
+    border: 1px solid #FFF;
+    width: 100%; }
 
 .md-heading {
   color: #403F3F;

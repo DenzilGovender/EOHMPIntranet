@@ -3,7 +3,7 @@
 
 
 
-    function ListEventController($location, $rootScope, $firebaseObject, $firebaseArray, EventService, $mdToast) {
+    function ListEventController($location, $sessionStorage, $firebaseObject, $firebaseArray, EventService, $mdToast, modal) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'Events';
@@ -16,7 +16,7 @@
 
         function init() {
             vm.events = $firebaseArray(ref.child('Event'));
-            if ($rootScope.userType == 'admin') {
+            if ($sessionStorage.userType == 'admin') {
                 vm.isAdmin = true;
             } else {
                 vm.isAdmin = false;
@@ -25,7 +25,8 @@
         }
 
         vm.createEvent = function () {
-            $location.path('/CreateEvent');
+            var templateUrl = '/app/components/event/create/createEvent.html';
+            modal.show(templateUrl, 'CreateEventController');
         }
 
         vm.back = function () {
@@ -47,5 +48,5 @@
     }
 
     angular.module('EOHIntranet').controller('ListEventController', ListEventController);
-    ListEventController.$inject = ['$location', '$rootScope', '$firebaseObject', '$firebaseArray', 'EventService', '$mdToast'];
+    ListEventController.$inject = ['$location', '$sessionStorage', '$firebaseObject', '$firebaseArray', 'EventService', '$mdToast', 'modal'];
 })();

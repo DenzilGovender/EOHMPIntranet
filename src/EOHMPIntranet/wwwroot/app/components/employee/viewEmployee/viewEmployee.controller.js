@@ -1,14 +1,13 @@
 ﻿(function () {
     'use strict';
 
-    function ViewEmployeeController($location, $scope, $firebaseObject, $firebaseArray, EmployeeService) {
+    function ViewEmployeeController($location, $scope, $firebaseObject, $firebaseArray, EmployeeService, modal, $rootScope) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = '';
+        $scope.title = 'User Profile';
         $scope.employee = {};
-        
-
-        //var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/User");
+        $rootScope.profileImage = 'assets/img/placeholder.png';
 
         init();
 
@@ -17,8 +16,22 @@
             $scope.employee = EmployeeService.getEmployee();
         }
          
-        $scope.chat = function (employee) {
+        $scope.closeModal = function () {
+            modal.hide();
+        };
+
+        $scope.ok = function () {
+            modal.hide();
+        };
+
+        $scope.cancel = function () {
+            modal.hide();
+        };
+
+        $scope.chat = function () {
+            $scope.closeModal();
             $location.path('/chat');
+            
         }
        
 
@@ -28,5 +41,5 @@
     }
 
     angular.module('EOHIntranet').controller('ViewEmployeeController', ViewEmployeeController);
-    ViewEmployeeController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'EmployeeService'];
+    ViewEmployeeController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'EmployeeService', 'modal', '$rootScope'];
 })();
