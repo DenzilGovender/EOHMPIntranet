@@ -17,9 +17,9 @@
         vm.removeUser = function (user) {
             vm.employees.$remove(user)
             $mdToast.show(
-     $mdToast.simple()
-     .textContent('Employee has been disactivated successfully!')
-     .hideDelay(3000));
+             $mdToast.simple()
+             .textContent('Employee has been disactivated successfully!')
+             .hideDelay(3000));
 
         }
 

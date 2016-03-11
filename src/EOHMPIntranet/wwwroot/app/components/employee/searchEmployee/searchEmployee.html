@@ -1,43 +1,41 @@
-﻿    <md-input-container>
+﻿<div layout="row" layout-align="end end" style="padding: 0px 26px 0px 0px;">
+    <div flex="50" layout="row">
+        <md-icon flex="initial" style="margin: 33px 4px 0px 0px;">search</md-icon>
+        <md-input-container flex>
         <label> Search for buddy</label>
-        <input type="text" ng-model="search"  name="employee"/>
+            <input type="text" ng-model="search" name="employee" />
     </md-input-container>
-
-    <!--<div layout="row" class="md-padding">
-        <div flex="50" layout="column" layout-align="start start">
-            <md-button class="md-raised md-warn" ng-click="vm.SearchEmployee()">Search</md-button>
         </div>
-    </div-->
+</div>
+
+<md-content class="main-content md-padding page-content transparent">
+    <md-content class="box-shadow">
 
     <md-data-table-container>
         <table md-data-table md-progress="deferred">
-            <thead md-order="query.order" md-trigger="onOrderChange">
+                <thead md-order="query.order" md-trigger="onOrderChange" class="color-blue color-medium-grey" >
                 <tr>
-                    <th name="First name"></th>
-                    <th name="Last name"></th>
-                    <th name="Cellphone"></th>
-                    <th name="Position"></th>
-                    <th name="Deactivate"></th>
-                    <th name="View Profile"></th>
+                        <th name="Name" order-by="name"></th>
+                        <th name="Surname" order-by="surname"></th>
+                        <th name="Position" order-by="position"></th>
+                        <th name="Cellphone" order-by="cellphone"></th>
+                        <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="employee in vm.employees | filter: search" >
-                    <td><p class="md-currency-circle">{{employee.firstname}}</p></td>
-                    <td>{{employee.lastname}}</td>
-                    <td>{{employee.cellphone}}</p></td>
-                    <td>{{employee.title.TitleName}}</td>
-                    <td class="md-table-button">
-                        <md-button class="md-icon-button" ng-click="vm.removeUser(employee)">
-                            <md-icon md-font-icon="material-icons" class="md-font material-icons">delete</md-icon>
-                        </md-button>
-                    </td>
-                    <td class="md-table-button">
-                        <md-button class="md-icon-button" ng-click="viewEmployeeDetails(employee)">
-                            <md-icon md-font-icon="material-icons" class="md-font material-icons">delete</md-icon>
-                        </md-button>
-                    </td>
+                    <tr ng-repeat="employee in vm.employees | filter: search"  class="hover">
+                        <td ng-click="viewEmployeeDetails(employee)">{{employee.firstname}}</td>
+                        <td ng-click="viewEmployeeDetails(employee)">{{employee.lastname}}</td>
+                        <td ng-click="viewEmployeeDetails(employee)">{{employee.title.TitleName}}</td>
+                        <td ng-click="viewEmployeeDetails(employee)">{{employee.cellphone}}</td>
+                        <td class="md-table-text-button" ><!--add delete funtion-->
+                            <p ng-click="vm.removeUser(employee)">remove</p>
+                        </td>
+
                 </tr>
             </tbody>
         </table>
     </md-data-table-container>
+        <md-data-table-pagination class="margin-bottom-16" md-limit="vm.pagenation.limit" md-page="vm.pagenation.page" md-total="{{vm.employees.length}}"></md-data-table-pagination>
+    </md-content>
+</md-content>

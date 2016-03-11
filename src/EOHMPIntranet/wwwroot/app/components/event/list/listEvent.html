@@ -1,32 +1,18 @@
-﻿<md-content class="main-content md-padding page-content transparent">
-    <input type="button" value="Add Event" ng-click="vm.createEvent()" ng-if="vm.isAdmin" />
-
-    <md-content class="box-shadow">
-        <md-data-table-container>
-            <table md-data-table md-progress="deferred">
-                <thead md-head md-order="userSorting" class="ng-isolate-scope">
-                    <tr md-row>
-                        <th md-column name="Event Name" order-by="name"></th>
-                        <th md-column name="Event Date" order-by="date"></th>
-                        <th md-column name="Venue" order-by="venue"></th>
-                        <th md-column name="Event Type"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="event in vm.events | limitTo: vm.pagenation.limit : (vm.pagenation.page -1) * vm.pagenation.limit | orderBy: userSorting track by $index" class="hover">
-                        <td ng-click="vm.viewEvent(event)">{{event.name}}</td>
-                        <td ng-click="vm.viewEvent(event)">{{event.date | date : "YYYY/MM/DD"}}</td>
-                        <td ng-click="vm.viewEvent(event)">{{event.venue}}</td>
-                        <td ng-click="vm.viewEvent(event)">{{event.type}}</td>
-                        <td ng-if="vm.isAdmin">
-                            <md-button  class="md-icon-button" ng-click="vm.delectEvent(event)" aria-label="Delete">
-                                <md-icon md-font-icon="material-icons" class="md-font material-icons">delete</md-icon>
-                            </md-button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </md-data-table-container>
-        <md-data-table-pagination class="margin-bottom-16" md-limit="vm.pagenation.limit" md-page="vm.pagenation.page" md-total="{{vm.events.length}}"></md-data-table-pagination>
-    </md-content>
-</md-content>
+﻿<div class="md-padding md-application-cards" layout="row" layout-wrap >
+    <md-card ng-repeat="event in vm.events" flex class="md-flip-in" ng-click="vm.viewEvent(event)">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2 flex>{{event.name}}</h2>
+            </div>
+        </md-toolbar>   
+        <div layout="column" class="md-padding">
+            <p class="no-margin md-font-size-xs">{{event.description}}</p>
+        </div>        
+    </md-card>
+    <md-card flex layout-align="center center" class="md-card-placeholder" ng-click="vm.createEvent()" ng-if="vm.isAdmin">   
+        <div layout="column" layout-align="center center">
+            <h3 class="no-margin"><i class="material-icons">add</i></h3>
+            <p class="no-margin md-font-size-xs">Add New <span>Event</span></p>
+        </div>          
+    </md-card>
+</div>

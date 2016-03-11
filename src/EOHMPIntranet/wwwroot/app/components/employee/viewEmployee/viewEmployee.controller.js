@@ -7,7 +7,7 @@
         vm.title = '';
         $scope.title = 'User Profile';
         $scope.employee = {};
-        $rootScope.profileImage = 'assets/img/placeholder.png';
+        $scope.profileImage = $rootScope.profileImage;
 
         init();
 
@@ -20,16 +20,8 @@
             modal.hide();
         };
 
-        $scope.ok = function () {
-            modal.hide();
-        };
-
-        $scope.cancel = function () {
-            modal.hide();
-        };
-
         $scope.chat = function () {
-            $scope.closeModal();
+            modal.hide();
             $location.path('/chat');
             
         }

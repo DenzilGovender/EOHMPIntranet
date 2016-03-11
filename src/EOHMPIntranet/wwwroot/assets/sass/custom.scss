@@ -4,7 +4,6 @@
 .main-wrap{
     margin: 0;
     width: 100%;
-    min-height: calc(100% - 100px);
     height: calc(100% - 100px);
 }
 .inline-switch{
@@ -587,4 +586,50 @@ overflow: hidden;
         
     }
     
+}
+
+.md-table-text-button{
+    p{
+        &:hover{
+            background-color: $ci-blue;
+            color: $ci-white;
+            transition: all 0.3s ease-in-out;
+        }
+        transition: all 0.3s ease-in-out;
+        background-color: $ci-white;
+        background-color: transparent;
+        float: right;
+        display: inline-block;
+        padding: 4px 10px;
+        border: 1px solid #00041E;
+        border-radius: 30px;
+        margin: 0;
+        line-height: 17px;
+    }
+}
+
+.profile-picture-modal{
+    margin-top: -63px;
+    border-radius: 50%;
+    border: 15px solid #fff;
+}
+
+.online-circle{
+    background-color: #105210;
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% + 47px);
+    border: 5px solid #fff;
+    top: 58px;
+}
+
+.buddy-profile-modal{
+    h3{
+        margin: 0;
+    }
+    p{
+        margin: 0;
+    }
 }
