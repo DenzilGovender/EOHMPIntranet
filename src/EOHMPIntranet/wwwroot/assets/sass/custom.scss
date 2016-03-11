@@ -553,4 +553,38 @@ overflow: hidden;
 .md-login{
     background: url('../img/login_background.png') no-repeat center center!important;
     background-size: cover!important;
+
+    md-input-container .md-input{
+        border-color: #fff!important;
+        color: #fff!important;
+    }
+    .md-input-focused label{
+        color: #fff!important;
+    }
+    md-icon{
+        color: #fff;
+    }
+
+    .md-login-facebook{
+       
+        button{
+            background-color: transparent;
+            border: 1px solid #FFF;
+            width: 100%;
+            &:hover{
+                border-color: $light-gray;
+                
+            }
+
+        }
+    }
+    .md-login-button{
+        button{
+            background-color: transparent;
+            border: 1px solid #FFF;
+            width: 100%;
+        }
+        
+    }
+    
 }

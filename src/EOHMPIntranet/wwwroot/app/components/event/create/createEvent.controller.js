@@ -3,18 +3,18 @@
 
 
 
-    function CreateEventController($location, $firebaseArray, $mdToast) {
+    function CreateEventController($location, $firebaseArray, $mdToast, $scope, modal) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'Create Event';
         var ref = new Firebase("https://eoh-intranet.firebaseio.com/Event");
-        vm.minDate = new Date();
+        $scope.minDate = new Date();
 
-        vm.saveEmployee = function () {
-            alert('asdf');
-        }
+        $scope.closeModal = function () {
+            modal.hide();
+        };
 
-        vm.save = function (event)
+        $scope.save = function (event)
         {
             var AddEvent = $firebaseArray(ref);
             var date = event.date;
@@ -25,15 +25,11 @@
                           $mdToast.simple()
                           .textContent('Event is saved successfully!')
                           .hideDelay(3000));
-            $location.path('/Events');
-        }
-
-        vm.cancel = function () {
-            $location.path('/Events');
-        }
+            modal.hide();
+        }     
     }
 
     angular.module('EOHIntranet').controller('CreateEventController', CreateEventController);
-    CreateEventController.$inject = ['$location', '$firebaseArray', '$mdToast'];
+    CreateEventController.$inject = ['$location', '$firebaseArray', '$mdToast', '$scope', 'modal'];
 
 })();
