@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';   
 
-    function ChatController($location, $firebaseArray, $rootScope) {
+    function ChatController($location, $firebaseArray, $sessionStorage) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'chat';
@@ -28,8 +28,8 @@
                 vm.messages.$add({
                 text: message,
                 TimeSubmitted: time,
-                user: $rootScope.displayName,
-                image: $rootScope.profileImage
+                user: $sessionStorage.displayName,
+                image: $sessionStorage.profileImage
             });
 
             vm.message = undefined;
@@ -38,5 +38,5 @@
     }
 
     angular.module('EOHIntranet').controller('ChatController', ChatController);
-    ChatController.$inject = ['$location', '$firebaseArray', '$rootScope'];
+    ChatController.$inject = ['$location', '$firebaseArray', '$sessionStorage'];
 })();
