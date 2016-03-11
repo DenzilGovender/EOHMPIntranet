@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function RecruitmentViewController($location, $scope, $firebaseObject, $firebaseArray, RecruitmentService) {
+    function RecruitmentViewController($location, $scope, $firebaseObject, $firebaseArray, RecruitmentService, modal) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'indexController';
@@ -27,11 +27,14 @@
 
         $scope.view = function (recruitment) {
             RecruitmentService.assignCurrentRecruitment(recruitment);
+            //var templateUrl = '/app/components/recruitment/recruitment.detail.html';
+            //modal.show(templateUrl, 'RecruitmentDetailController');
             $location.path('/RecruitmentDetail');
+          
         }
 
     }
 
     angular.module('EOHIntranet').controller('RecruitmentViewController', RecruitmentViewController);
-    RecruitmentViewController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'RecruitmentService'];
+    RecruitmentViewController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'RecruitmentService', 'modal'];
 })();

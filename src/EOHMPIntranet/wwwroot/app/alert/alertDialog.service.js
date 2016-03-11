@@ -30,6 +30,6 @@
 
     }
 
-    angular.module('GPOApp').service('alertDialogService', alertDialogService);
+    angular.module('EOHIntranet').service('alertDialogService', alertDialogService);
     alertDialogService.$inject = ['$http', '$q'];
 })();
