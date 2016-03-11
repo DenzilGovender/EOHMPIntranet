@@ -3,7 +3,7 @@
 
 
 
-    function ListEventController($location, $rootScope, $firebaseObject, $firebaseArray, EventService, $mdToast) {
+    function ListEventController($location, $rootScope, $firebaseObject, $firebaseArray, EventService, $mdToast, modal) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'Events';
@@ -25,7 +25,8 @@
         }
 
         vm.createEvent = function () {
-            $location.path('/CreateEvent');
+            var templateUrl = '/app/components/event/create/createEvent.html';
+            modal.show(templateUrl, 'CreateEventController');
         }
 
         vm.back = function () {
@@ -47,5 +48,5 @@
     }
 
     angular.module('EOHIntranet').controller('ListEventController', ListEventController);
-    ListEventController.$inject = ['$location', '$rootScope', '$firebaseObject', '$firebaseArray', 'EventService', '$mdToast'];
+    ListEventController.$inject = ['$location', '$rootScope', '$firebaseObject', '$firebaseArray', 'EventService', '$mdToast', 'modal'];
 })();
