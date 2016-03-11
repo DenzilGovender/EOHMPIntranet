@@ -6,7 +6,7 @@
         var vm = this;
         vm.title = 'View Event';
         var ref;       
-
+        $scope.profilePic="http://lorempixel.com/150/150/people/";
         init();
 
         function init() {
@@ -36,13 +36,16 @@
         }
 
         $scope.addEventComment = function (comment) {
-            comment = $sessionStorage.displayName + ": " + comment;
+            var commentOjt = {};
+            commentOjt.name = $sessionStorage.displayName;
+            commentOjt.profileImage = $sessionStorage.profileImage;
+            commentOjt.dispalyComment = comment;
             var oldEvent = $firebaseObject(ref);
             $scope.comments = $scope.event.comments;
             if ($scope.comments == undefined) {
                 $scope.comments =[];
             }
-            $scope.comments.push(comment);
+            $scope.comments.push(commentOjt);
             oldEvent.comments = $scope.comments;
             var event = ($scope.comments, $scope.event);
             oldEvent.$id = event.$id;

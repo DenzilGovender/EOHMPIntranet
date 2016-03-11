@@ -564,18 +564,24 @@ overflow: hidden;
     .md-login-facebook{
        
         button{
+            span{
+                color: #fff!important;
+                background-color: transparent;
+            }
             background-color: transparent;
             border: 1px solid #FFF;
             width: 100%;
             &:hover{
                 border-color: $light-gray;
-                
             }
 
         }
     }
     .md-login-button{
         button{
+            span{
+                color: #fff!important;
+            }
             background-color: transparent;
             border: 1px solid #FFF;
             width: 100%;
@@ -657,4 +663,27 @@ overflow: hidden;
         color: $ci-blue!important;
         transition: all 0.3s ease-in-out;
     }
+}
+
+.event-details-modal-icon{
+    font-size: 70px;
+    color: #eab600;
+}
+.md-line{
+    width: 100%;
+    height: 1px;
+    background: $dark-gray;
+}
+
+.md-comment{
+    background-color: $light-gray;
+    height: 75px;
+    border-radius: 75px;
+    width: 100%;
+    img{
+        height: 75px;
+        border-radius: 50%;
+        background: transparent;
+    }
+
 }
