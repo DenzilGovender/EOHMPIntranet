@@ -37,9 +37,6 @@ md-content{
     .md-button[disabled] {
         background-color: #E6E7E8;
     }
-    span{
-        color: $ci-white;
-    }
 }
 
 
@@ -631,5 +628,33 @@ overflow: hidden;
     }
     p{
         margin: 0;
+        color: $dark-gray;
+        font-size: 0.9em;
+    }
+}
+
+.md-primary-custom{
+    &:hover{
+        background-color: $ci-blue;
+        transition: all 0.3s ease-in-out;
+        span{
+            color: $ci-white!important;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    transition: all 0.3s ease-in-out;
+    background-color: $ci-white;
+    
+    background-color: transparent;
+    float: right;
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid #00041E;
+    border-radius: 30px;
+    margin: 0;
+    line-height: 17px;
+    span{
+        color: $ci-blue!important;
+        transition: all 0.3s ease-in-out;
     }
 }
