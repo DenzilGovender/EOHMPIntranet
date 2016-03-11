@@ -16,7 +16,7 @@
                     <tr>
                         <th name="Name"></th>
                         <th name="Surname"></th>
-                        <th name="Title"></th>
+                        <th name="Job Title"></th>
                         <th name="Email Address"></th>
                         <th name="Contact Number"></th>
                         <th></th>
@@ -24,11 +24,11 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="member in vm.project.members">
-                        <td>{{member.name}}</td>
-                        <td>{{member.surname}}</td>
+                        <td>{{member.firstname}}</td>
+                        <td>{{member.lastname}}</td>
                         <td>{{member.tittle}}</td>
-                        <td>{{member.emailAddress}}</td>
-                        <td>{{member.contactNumber}}</td>
+                        <td>{{member.email}}</td>
+                        <td>{{member.cellphone}}</td>
                     </tr>
                 </tbody>
             </table>

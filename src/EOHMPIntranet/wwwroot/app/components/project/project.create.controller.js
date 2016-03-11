@@ -10,10 +10,11 @@
             var AddProject = $firebaseArray(ref);
             project.openDate = project.openDate.toString();
             project.closeDate = project.closeDate.toString();
-            project.members = [{}];
-            project.technologies = [{}];
+            project.members = [];
+            project.technologies = [];
 
             AddProject.$add(project);
+            modal.hide();
         }
 
         $scope.closeModal = function () {
