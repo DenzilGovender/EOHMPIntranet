@@ -24,7 +24,7 @@
 
             .when('/ViewEmployee', {
                 controller: 'ViewEmployeeController',
-                templateUrl: viewBase + '/employee/viewEmployee/viewEmployee.html',
+                templateUrl: viewBase + '/employee/viewEmployee/viewEmployee.template.html',
                 controllerAs: 'vm'
         })
 

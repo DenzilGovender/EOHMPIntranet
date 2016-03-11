@@ -17,14 +17,26 @@
                     <th name="Last name"></th>
                     <th name="Cellphone"></th>
                     <th name="Position"></th>
+                    <th name="Deactivate"></th>
+                    <th name="View Profile"></th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="employee in vm.employees | filter: search" ng-click="viewEmployeeDetails(employee)">
+                <tr ng-repeat="employee in vm.employees | filter: search" >
                     <td><p class="md-currency-circle">{{employee.firstname}}</p></td>
                     <td>{{employee.lastname}}</td>
                     <td>{{employee.cellphone}}</p></td>
                     <td>{{employee.title.TitleName}}</td>
+                    <td class="md-table-button">
+                        <md-button class="md-icon-button" ng-click="vm.removeUser(employee)">
+                            <md-icon md-font-icon="material-icons" class="md-font material-icons">delete</md-icon>
+                        </md-button>
+                    </td>
+                    <td class="md-table-button">
+                        <md-button class="md-icon-button" ng-click="viewEmployeeDetails(employee)">
+                            <md-icon md-font-icon="material-icons" class="md-font material-icons">delete</md-icon>
+                        </md-button>
+                    </td>
                 </tr>
             </tbody>
         </table>
