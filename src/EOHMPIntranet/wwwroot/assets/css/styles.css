@@ -7955,8 +7955,6 @@ md-content.box-shadow {
     background-color: rgba(6, 21, 86, 0.9); }
   .md-primary-custom .md-button[disabled] {
     background-color: #E6E7E8; }
-  .md-primary-custom span {
-    color: white; }
 
 .md-header-fab {
   position: absolute;
@@ -8374,7 +8372,30 @@ overflow: hidden;
   margin: 0; }
 
 .buddy-profile-modal p {
-  margin: 0; }
+  margin: 0;
+  color: #676767;
+  font-size: 0.9em; }
+
+.md-primary-custom {
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  background-color: transparent;
+  float: right;
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid #00041E;
+  border-radius: 30px;
+  margin: 0;
+  line-height: 17px; }
+  .md-primary-custom:hover {
+    background-color: #00041e;
+    transition: all 0.3s ease-in-out; }
+    .md-primary-custom:hover span {
+      color: white !important;
+      transition: all 0.3s ease-in-out; }
+  .md-primary-custom span {
+    color: #00041e !important;
+    transition: all 0.3s ease-in-out; }
 
 .md-heading {
   color: #403F3F;
