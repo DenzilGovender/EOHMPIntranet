@@ -1,9 +1,9 @@
 ﻿<md-content class="main-content md-padding page-content transparent">
+        <md-content class="box-shadow">
 
-    <md-content class="box-shadow">
         <md-data-table-container>
             <table md-data-table md-progress="deferred">
-                <thead md-order="order">
+                <thead md-order="query.order" md-trigger="onOrderChange" class="color-blue color-medium-grey">
                     <tr>
                         <th name="Position Title" order-by="name" ng-click="vm.sortData('companyName')"></th>
                         <th name="Closing Date" order-by="country" ng-click="vm.sortData('description')"></th>

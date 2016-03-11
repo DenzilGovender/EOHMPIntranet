@@ -1,11 +1,11 @@
 ﻿<md-content class="main-content md-padding page-content transparent">
     <input type="button" value="Add Event" ng-click="vm.createEvent()" ng-if="vm.isAdmin" />
 
-    <md-content class="box-shadow">
+    <md-content class="main-content md-padding page-content transparent">
         <md-data-table-container>
             <table md-data-table md-progress="deferred">
-                <thead md-head md-order="userSorting" class="ng-isolate-scope">
-                    <tr md-row>
+                <thead md-order="query.order" md-trigger="onOrderChange" class="color-blue color-medium-grey">
+                    <tr>
                         <th md-column name="Event Name" order-by="name"></th>
                         <th md-column name="Event Date" order-by="date"></th>
                         <th md-column name="Venue" order-by="venue"></th>
@@ -27,6 +27,7 @@
                 </tbody>
             </table>
         </md-data-table-container>
+        <!--<md-data-table-pagination class="margin-bottom-16" md-limit="vm.pagenation.limit" md-page="vm.pagenation.page" md-total="{{vm.events.length}}"></md-data-table-pagination>-->
         <md-data-table-pagination class="margin-bottom-16" md-limit="vm.pagenation.limit" md-page="vm.pagenation.page" md-total="{{vm.events.length}}"></md-data-table-pagination>
     </md-content>
 </md-content>

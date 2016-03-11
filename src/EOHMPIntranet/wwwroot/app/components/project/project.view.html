@@ -2,7 +2,7 @@
     <md-content class="box-shadow">
         <md-data-table-container>
             <table md-data-table md-progress="deferred">
-                <thead>
+                <thead md-order="query.order" md-trigger="onOrderChange" class="color-blue color-medium-grey">
                     <tr>
                         <th name="Project Name"></th>
                         <th name="Customer"></th>
@@ -29,6 +29,7 @@
             </table>
             <md-data-table-container>
                 <!--<md-data-table-pagination md-limit="vm.pagenation.limit" md-page="vm.pagenation.page" md-total="{{vm.projects.length}}" md-page-select="vm.pagenation.pageSelector" md-boundary-links="vm.pagenation.boundaryLinks"></md-data-table-pagination>-->
+                <md-data-table-pagination class="margin-bottom-16" md-limit="vm.pagenation.limit" md-page="vm.pagenation.page" md-total="{{vm.projects.length}}"></md-data-table-pagination>
             </md-data-table-container>
     </md-content>
     <md-content class="md-padding">

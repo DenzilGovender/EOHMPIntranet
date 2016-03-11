@@ -23,14 +23,15 @@
                 </tr>
             </thead>
             <tbody>
-                    <tr ng-repeat="employee in vm.employees | filter: search" ng-click="viewEmployeeDetails(employee)" class="hover">
+                    <tr ng-repeat="employee in vm.employees | filter: search"  class="hover">
                         <td ng-click="viewEmployeeDetails(employee)">{{employee.firstname}}</td>
                         <td ng-click="viewEmployeeDetails(employee)">{{employee.lastname}}</td>
                         <td ng-click="viewEmployeeDetails(employee)">{{employee.title.TitleName}}</td>
                         <td ng-click="viewEmployeeDetails(employee)">{{employee.cellphone}}</td>
-                        <td class="md-table-text-button" ng-click=""><!--add delete funtion-->
-                            <p>remove</p>
+                        <td class="md-table-text-button" ><!--add delete funtion-->
+                            <p ng-click="vm.removeUser(employee)">remove</p>
                         </td>
+
                 </tr>
             </tbody>
         </table>
