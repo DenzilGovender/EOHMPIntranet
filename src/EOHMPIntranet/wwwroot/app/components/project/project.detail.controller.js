@@ -11,8 +11,9 @@
             var templateUrl = '/app/components/project/project.addMember.html';
             modal.show(templateUrl, 'ProjectAddMemberController');
         }
+
     }
-   
+
     angular.module('EOHIntranet').controller('ProjectDetailController', ProjectDetailController);
     ProjectDetailController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'ProjectService', 'modal'];
 })();
