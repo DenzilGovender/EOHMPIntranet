@@ -8418,8 +8418,20 @@ overflow: hidden;
   width: 100%; }
   .md-comment img {
     height: 75px;
+    width: 75px;
     border-radius: 50%;
     background: transparent; }
+
+.md-title-header-bar {
+  min-height: 30px;
+  width: 80%;
+  background-color: #00041e !important;
+  background-image: url("../img/stripes.jpg") !important;
+  background-position: right center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain; }
+  .md-title-header-bar p {
+    color: white !important; }
 
 .md-heading {
   color: #403F3F;

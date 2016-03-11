@@ -1,12 +1,53 @@
-﻿<div layout="row" class="md-padding">
-    <input ng-model="vm.message" type="text" />
-    <div flex="50" layout="column" layout-align="start start">
-        <md-button class="md-raised md-default" ng-click="vm.addMessage(vm.message)">Comment</md-button>
-    </div>
-</div>
-<div layout="row" class="md-padding" ng-repeat="message in vm.messages track by $index">
-    <h3>{{message.user}}</h3>
-    <h3>{{ message.TimeSubmitted}} :</h3>
-    <p>{{message.text}}<p/>
-    
-</div>
+﻿<md-content class="main-content md-padding page-content padding-bottom-8 transparent">
+    <md-content layout="column" class="md-title-header-bar" ng-if="vm.selectedQuoteRequestDetails.length != 0">
+        <div flex="auto" layout="row" class="md-padding color-medium-grey">
+            <div flex="30" layout="column" layout-align="start start">
+                <p flex class="no-margin"><strong>EOH AMP </strong>Chat Room</p>
+            </div>
+        </div>
+    </md-content>
+</md-content>
+<md-content class="main-content md-padding md-fade-in page-content transparent">
+    <md-content class="box-shadow">
+
+        <div class="md-padding">
+            <div layout="row" ng-repeat="message in vm.messages track by $index">
+                <div class="md-comment margin-bottom-8" layout="row">
+                    <img src="{{message.image}}" flex="initial" />
+                    <div layout="column" flex class="md-padding">
+                        <p flex class="no-margin"><strong>{{message.user}}</strong></p>
+                        <p flex class="no-margin">{{message.text}}</p>
+                    </div>
+                    <div layout="row" layout-align="end center" class="md-padding">
+                        <p style="font-size: 0.8em;">{{ message.TimeSubmitted}}</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--<div layout="row" class="md-padding" ng-repeat="message in vm.messages track by $index">
+            <h3>{{message.user}}</h3>
+            <h3>{{ message.TimeSubmitted}} :</h3>
+            <p>{{message.text}}<p />
+
+        </div>-->
+
+        <div layout="row" class="margin-top-16 margin-bottom-16">
+            <div flex class="md-line"></div>
+        </div>
+
+        <div layout="row" class="md-padding">
+            <md-input-container flex class="md-block">
+                <label>Comment</label>
+                <input ng-model="vm.message" type="text" />
+            </md-input-container>
+            <div flex="5"></div>
+            <div flex="initial" layout="column" layout-align="center end">
+                <md-button class="md-primary-custom" ng-click="vm.addMessage(vm.message)">Send</md-button>
+            </div>
+        </div>
+    </md-content>
+</md-content>

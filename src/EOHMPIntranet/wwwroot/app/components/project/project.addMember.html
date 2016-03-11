@@ -1,4 +1,4 @@
-﻿<md-dialog ng-cloak class="medium">
+﻿<md-dialog ng-cloak style="min-width: 40%">
     <md-toolbar class="color-blue color-medium-grey">
         <div class="md-toolbar-tools ">
             <h2>Add Members</h2>
@@ -10,8 +10,12 @@
     </md-toolbar>
 
     <md-content class="md-padding autocomplete" layout="column">
-        <md-contact-chips ng-model="employees" md-contacts="querySearch($query)" md-contact-name="fullname" md-contact-image="image" md-contact-email="email" md-require-match="true" md-highlight-flags="i" filter-selected="filterSelected" placeholder="Search employee">
-        </md-contact-chips>
+        <div layout="row">
+            <md-icon flex="initial">search</md-icon>
+            <md-contact-chips flex ng-model="employees" md-contacts="querySearch($query)" md-contact-name="fullname" md-contact-image="image" md-contact-email="email" md-require-match="true" md-highlight-flags="i" filter-selected="filterSelected" placeholder="Search employee">
+            </md-contact-chips>
+        </div>
+        
 
         <!--<md-list class="fixedRows">
             <md-subheader class="md-no-sticky">Employees</md-subheader>
@@ -34,7 +38,7 @@
         <md-content class="md-padding">
             <div layout="row">
                 <div flex="50" layout="column" layout-align="start start">
-                    <md-button class="md-raised" ng-click="closeModal()">Close</md-button>
+                    <md-button class="md-primary md-primary-custom" ng-click="closeModal()">Close</md-button>
                 </div>
                 <div flex="50" layout="row" layout-align="end end">
                     <md-button class="md-primary md-primary-custom" ng-click="create()">Save</md-button>

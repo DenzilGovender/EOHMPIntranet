@@ -28,7 +28,8 @@
                 vm.messages.$add({
                 text: message,
                 TimeSubmitted: time,
-                user: $rootScope.displayName
+                user: $rootScope.displayName,
+                image: $rootScope.profileImage
             });
 
             vm.message = undefined;

@@ -1,11 +1,9 @@
-﻿<md-content class="main-content md-padding page-content transparent">
-    <md-content layout="column" class="box-shadow" ng-if="vm.selectedQuoteRequestDetails.length != 0">
-        <div flex="auto" layout="row" class="md-padding color-blue color-medium-grey">
+﻿<md-content class="main-content md-padding page-content padding-bottom-8 transparent">
+    <md-content layout="column" class="md-title-header-bar"  ng-if="vm.selectedQuoteRequestDetails.length != 0">
+        <div flex="auto" layout="row" class="md-padding color-medium-grey">
             <div flex="30" layout="column" layout-align="start start">
-
-                <h1 flex="100" ng-bind="vm.ProjectFullName" class="no-margin md-font-align-center-xs"></h1>
+                <p flex ng-bind="vm.ProjectFullName" class="no-margin"></p>
             </div>
-            
         </div>
     </md-content>
 </md-content>
@@ -21,7 +19,6 @@
                         <th name="Job Title"></th>
                         <th name="Email Address"></th>
                         <th name="Contact Number"></th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
