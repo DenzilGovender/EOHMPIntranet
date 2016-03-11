@@ -22,7 +22,7 @@
         };
     }
 
-    angular.module('GPOApp').controller('alertDialogController', alertDialogController);
+    angular.module('EOHIntranet').controller('alertDialogController', alertDialogController);
     alertDialogController.$inject = ['$location', '$scope', 'modal', 'alertDialogService'];
 
 })();

@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function AdmimRecruitmentCreateController($location, $scope, $firebaseObject, $firebaseArray, modal) {
+    function AdmimRecruitmentCreateController($location, $scope, $firebaseObject, $firebaseArray, modal, alertDialogService) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'indexController';
@@ -23,14 +23,14 @@
             recruitment.closeDate = recruitment.closeDate.toString();
             AddRecruitment.$add(recruitment);
 
-            alertDialogService.setHeaderAndMessage("Alert", "Successfully added a new job position ");
-            //alertDialogService.setPath('/viewBeneficiaries');
-            var templateUrl = '/app/common/alert/infoDialog.template.html';
+            alertDialogService.setHeaderAndMessage("Information", "Successfully added a new job position ");
+            alertDialogService.setPath('/dashboard');
+            var templateUrl = '/app/alert/infoDialog.template.html';
             modal.show(templateUrl, 'alertDialogController');
         }
 
     }
 
     angular.module('EOHIntranet').controller('AdmimRecruitmentCreateController', AdmimRecruitmentCreateController);
-    AdmimRecruitmentCreateController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray', 'alertDialogService'];
+    AdmimRecruitmentCreateController.$inject = ['$location', '$scope', '$firebaseObject', '$firebaseArray','modal', 'alertDialogService'];
 })();
