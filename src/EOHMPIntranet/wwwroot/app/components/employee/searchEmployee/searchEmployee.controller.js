@@ -6,7 +6,7 @@
         var vm = this;
         vm.title = '';
         vm.employees = [];
-        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com");
+        var ref = new Firebase("https://eoh-intranet.firebaseio.com");
 
         init();
 
@@ -21,6 +21,10 @@
              .textContent('Employee has been disactivated successfully!')
              .hideDelay(3000));
 
+        }
+
+        $scope.createEmployee = function () {
+            $location.path('/CreateEmployee')
         }
 
         $scope.viewEmployeeDetails = function (employee) {

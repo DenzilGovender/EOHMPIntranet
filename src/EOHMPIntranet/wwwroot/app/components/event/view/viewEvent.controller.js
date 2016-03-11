@@ -55,7 +55,7 @@
             oldEvent.date = event.date;
             oldEvent.description = event.description;
             oldEvent.$save();
-            $scope.comment = undefined;
+            $scope.newComment = undefined;
         }
 
         var buildEvent = function (comments, event) {

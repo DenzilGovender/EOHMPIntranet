@@ -8,7 +8,7 @@
         vm.employee = {};
         vm.titles = [];
         vm.employee.profileImage = $rootScope.profileImage;
-        var ref = new Firebase("https://flickering-torch-5362.firebaseio.com/Employee");
+        var ref = new Firebase("https://eoh-intranet.firebaseio.com/Employee");
 
         init();
 
