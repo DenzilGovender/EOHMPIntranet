@@ -1,37 +1,51 @@
-﻿<md-content class="main-content md-padding page-content transparent md-fade-in">
+﻿<md-dialog ng-cloak class="large">
+    <md-content class="main-content md-padding page-content transparent md-fade-in">
+        <md-content class="md-padding">
+            <div>
+                <div flex layout-gt-md="row" layout="column">
+                    <md-input-container flex class="md-block">
+                        <label>Venue </label>
+                        {{event.name}}
+                    </md-input-container>
+                    <md-input-container flex class="md-block">
+                        <label>Event Date </label>
+                        {{event.date}}
+                    </md-input-container>
+                    <md-input-container flex class="md-block">
+                        <label>Venue </label>
+                        {{event.venue}}
+                    </md-input-container>
+                    <md-input-container flex class="md-block">
+                        <label>Event Type </label>
+                        {{event.type}}
+                    </md-input-container>
+                    <md-input-container flex class="md-block">
+                        <label>Description </label>
+                        {{event.description}}
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row" class="md-padding">
+                <input ng-model="vm.comment" type="text" />
+                <div flex="50" layout="column" layout-align="start start">
+                    <md-button class="md-raised md-default" ng-click="addEventComment(vm.comment)">Comment</md-button>
+                </div>
+            </div>
+            <div layout="row" class="md-padding" ng-repeat="comment in event.comments track by $index">
+                <p>{{comment}}</p>
+            </div>
+        </md-content>
+    </md-content>
     <md-content class="md-padding">
-        <div>
-            <div flex layout-gt-md="row" layout="column">                      
-                <md-input-container flex class="md-block">
-                    <label>Venue </label>
-                    {{vm.event.name}}
-                </md-input-container>
-                <md-input-container flex class="md-block">
-                    <label>Event Date </label>
-                    {{vm.event.date}}
-                </md-input-container>
-                <md-input-container flex class="md-block">
-                    <label>Venue </label>
-                    {{vm.event.venue}}
-                </md-input-container>
-                <md-input-container flex class="md-block">
-                    <label>Event Type </label>
-                    {{vm.event.type}}
-                </md-input-container>
-                <md-input-container flex class="md-block">
-                    <label>Description </label>
-                    {{vm.event.description}}
-                </md-input-container>
-            </div>            
-        </div>
         <div layout="row" class="md-padding">
-            <input ng-model="vm.comment" type="text"/>
             <div flex="50" layout="column" layout-align="start start">
-                <md-button class="md-raised md-default" ng-click="vm.addEventComment(vm.comment)">Comment</md-button>
-            </div>            
-        </div>
-        <div layout="row" class="md-padding" ng-repeat="comment in vm.event.comments track by $index">
-            <p>{{comment}}</p>
+                <md-button class="md-raised md-default" ng-click="closeModal()">Close</md-button>
+            </div>
+            <div flex="50" layout="row" layout-align="end end">
+                <md-button class="md-raised md-primary" ng-click="rejectEvent()">Reject</md-button>
+                <md-button class="md-raised md-primary" ng-click="acceptEvent()">Accept</md-button>
+            </div>
         </div>
     </md-content>
-</md-content>
+</md-dialog>
+   

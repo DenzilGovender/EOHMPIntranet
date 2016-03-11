@@ -1,4 +1,4 @@
-﻿<md-content class="main-content md-padding page-content transparent">
+﻿<md-content class="main-content md-fade-in md-padding page-content transparent">
     <md-content class="box-shadow">
         <md-data-table-container>
             <table md-data-table md-progress="deferred">
@@ -13,7 +13,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="project in vm.projects" ng-click="vm.showSelectedProject(project)">
+                    <tr ng-repeat="project in vm.projects" ng-click="vm.showSelectedProject(project)" class="hover">
                         <td><p class="md-currency-circle">{{project.projectName}}</p></td>
                         <td>{{project.customer}}</td>
                         <td>{{project.openDate | date:'dd/MM/yyyy'}}</td>

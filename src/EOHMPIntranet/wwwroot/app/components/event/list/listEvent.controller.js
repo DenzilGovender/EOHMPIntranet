@@ -36,18 +36,11 @@
         vm.back = function () {
             $location.path('/dashboard');
         }
-
-        vm.delectEvent = function (event) {
-            vm.events.$remove(event);
-            $mdToast.show(
-                         $mdToast.simple()
-                         .textContent('Event is removed successfully!')
-                         .hideDelay(3000));
-        }
-
+       
         vm.viewEvent = function (event) {
             EventService.assignSelectedEvent(event);
-            $location.path('/ViewEvent');
+            var templateUrl = '/app/components/event/view/viewEvent.html';
+            modal.show(templateUrl, 'ViewEventController');
         }
     }
 
