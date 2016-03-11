@@ -4,7 +4,6 @@
 .main-wrap{
     margin: 0;
     width: 100%;
-    min-height: calc(100% - 100px);
     height: calc(100% - 100px);
 }
 .inline-switch{
@@ -587,4 +586,24 @@ overflow: hidden;
         
     }
     
+}
+
+.md-table-text-button{
+    p{
+        &:hover{
+            background-color: $ci-blue;
+            color: $ci-white;
+            transition: all 0.3s ease-in-out;
+        }
+        transition: all 0.3s ease-in-out;
+        background-color: $ci-white;
+        background-color: transparent;
+        float: right;
+        display: inline-block;
+        padding: 4px 10px;
+        border: 1px solid #00041E;
+        border-radius: 30px;
+        margin: 0;
+        line-height: 17px;
+    }
 }

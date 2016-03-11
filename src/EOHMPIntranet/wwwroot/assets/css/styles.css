@@ -7932,7 +7932,6 @@ html, body {
 .main-wrap {
   margin: 0;
   width: 100%;
-  min-height: calc(100% - 100px);
   height: calc(100% - 100px); }
 
 .inline-switch {
@@ -8340,6 +8339,22 @@ overflow: hidden;
     border: 1px solid #FFF;
     width: 100%; }
 
+.md-table-text-button p {
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  background-color: transparent;
+  float: right;
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid #00041E;
+  border-radius: 30px;
+  margin: 0;
+  line-height: 17px; }
+  .md-table-text-button p:hover {
+    background-color: #00041e;
+    color: white;
+    transition: all 0.3s ease-in-out; }
+
 .md-heading {
   color: #403F3F;
   -webkit-margin-before: 1.0em;
@@ -8492,6 +8507,10 @@ overflow: hidden;
 
 .color-blue {
   background: #00041e !important; }
+  .color-blue th div {
+    color: white !important; }
+    .color-blue th div md-icon {
+      fill: #ef4141 !important; }
 
 .color-light-grey {
   background: #e6e7e8 !important; }
