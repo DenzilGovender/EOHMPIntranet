@@ -50,6 +50,7 @@
             oldEvent.type = event.type;
             oldEvent.venue = event.venue;
             oldEvent.date = event.date;
+            oldEvent.description = event.description;
             oldEvent.$save();
             $scope.comment = undefined;
         }
@@ -61,7 +62,8 @@
                 name: event.name,
                 type: event.type,
                 venue: event.venue,
-                date: event.date,              
+                date: event.date,
+                description: event.description,
             }
         }
     }
