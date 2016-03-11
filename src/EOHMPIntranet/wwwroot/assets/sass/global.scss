@@ -111,12 +111,21 @@
 }
 .color-blue{
     background: $ci-blue!important;
+    th{
+        div{
+            color: $ci-white!important;
+            md-icon{
+                fill: $ci-red!important;
+            }
+        }
+    }
 }
 .color-light-grey{
     background: $light-gray !important;
 }
 .color-medium-grey{
     color: $gray;
+
 }
 .transparent{
     background: transparent !important;
