@@ -1,0 +1,36 @@
+﻿<md-dialog ng-cloak class="large">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Add Members</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="closeModal()">
+                <md-icon md-font-icon="material-icons">close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-content class="md-padding autocomplete" layout="column">
+        <md-contact-chips ng-model="employees" md-contacts="querySearch($query)" md-contact-name="firstname" md-contact-image="image" md-contact-email="email" md-require-match="true" md-highlight-flags="i" filter-selected="ctrl.filterSelected" placeholder="Employee">
+        </md-contact-chips>
+
+        <md-list class="fixedRows">
+            <md-subheader class="md-no-sticky">Employees</md-subheader>
+            <!--<md-list-item class="md-2-line contact-item" ng-repeat="(index, employee) in employees" ng-if="employees.indexOf(employee) < 0">
+                <div class="md-list-item-text compact">
+                    <h3>
+                        {{employee.firstname}} {{employee.lastname}}
+                    </h3>
+                    <p>{{employee.email}}</p>
+                </div>
+            </md-list-item>-->
+            <md-list-item class="md-2-line contact-item selected" ng-repeat="(index, employee) in employees">
+                <div class="md-list-item-text compact">
+                    <h3>{{employee.firstname}} {{employee.lastname}}</h3>
+                    <p>{{employee.email}}</p>
+                </div>
+            </md-list-item>
+        </md-list>
+
+
+    </md-content>
+</md-dialog>

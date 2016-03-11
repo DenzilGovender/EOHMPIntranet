@@ -81,6 +81,10 @@
               controller: 'ProjectDetailController',
               templateUrl: viewBase + '/project/project.detail.html',
               controllerAs: 'vm'
+          }).when('/ProjectAddMember', {
+              controller: 'ProjectAddMemberController',
+              templateUrl: viewBase + '/project/project.addMember.html',
+              controllerAs: 'vm'
           }).when('/chat', {
               controller: 'ChatController',
                 templateUrl: viewBase + '/employee/chat/chat.html',
