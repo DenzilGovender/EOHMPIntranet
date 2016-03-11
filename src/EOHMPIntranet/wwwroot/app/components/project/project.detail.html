@@ -1,18 +1,20 @@
 ﻿<md-content class="main-content md-padding page-content transparent">
     <md-content layout="column" class="box-shadow" ng-if="vm.selectedQuoteRequestDetails.length != 0">
-        <div flex="auto" layout="row" class="md-padding margin-bottom-16">
+        <div flex="auto" layout="row" class="md-padding color-blue color-medium-grey">
             <div flex="30" layout="column" layout-align="start start">
-                <h3 flex="100" ng-bind="vm.project.projectName" class="no-margin md-font-align-center-xs"></h3>
+
+                <h1 flex="100" ng-bind="vm.ProjectFullName" class="no-margin md-font-align-center-xs"></h1>
             </div>
-            <div flex="70" layout="row" layout-align="start start">
-                <p flex ng-bind="vm.project.customer" class="no-margin md-font-align-left-xs"></p>
-            </div>
+            
         </div>
     </md-content>
+</md-content>
+
+<md-content class="main-content md-padding page-content transparent">
     <md-content>
         <md-data-table-container>
             <table md-data-table md-progress="deferred" class="no-hover">
-                <thead md-order="query.order" md-trigger="onOrderChange">
+                <thead md-order="query.order" md-trigger="onOrderChange" class="color-blue color-medium-grey">
                     <tr>
                         <th name="Name"></th>
                         <th name="Surname"></th>

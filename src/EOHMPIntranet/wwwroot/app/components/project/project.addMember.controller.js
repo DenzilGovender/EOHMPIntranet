@@ -29,8 +29,14 @@
                 delete $scope.employees[i]['image'];
             }
 
-            var members = project.members.concat($scope.employees);
-            oldProject.members = members;
+            if (project.members) {
+                var members = project.members.concat($scope.employees);
+                oldProject.members = members;
+            } else {
+                oldProject.members = $scope.employees;
+            }
+
+
             oldProject.closeDate = project.closeDate.toString();
             oldProject.customer = project.customer;
             oldProject.description = project.description;
