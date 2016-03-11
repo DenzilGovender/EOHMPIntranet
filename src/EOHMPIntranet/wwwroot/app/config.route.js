@@ -51,7 +51,11 @@
                  templateUrl: viewBase + '/recruitment/recruitment.detail.html',
                  controllerAs: 'vm'
              })
-
+            .when('/faq', {
+                controller: 'faqController',
+                templateUrl: viewBase + 'faq/faq.html',
+                controllerAs: 'vm'
+            })
              .when('/login', {
                  controller: 'LoginController',
                  templateUrl: viewBase + '/login/login.html',
@@ -59,10 +63,10 @@
              })
 
             .when('/Employee', {
-                          controller: 'AdmimRecruitmentCreateController',
-                          templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
-                          controllerAs: 'vm'
-                                    })
+                controller: 'AdmimRecruitmentCreateController',
+                templateUrl: viewBase + '/recruitment/adminRecruitmentCreate.html',
+                controllerAs: 'vm'
+            })
 
             .when('/CreateEvent', {
                 controller: 'CreateEventController',
