@@ -36,6 +36,12 @@
             </tbody>
         </table>
     </md-data-table-container>
+
         <md-data-table-pagination class="margin-bottom-16" md-limit="vm.pagenation.limit" md-page="vm.pagenation.page" md-total="{{vm.employees.length}}"></md-data-table-pagination>
+        <div layout="row" class="layout-align-end-end">
+            <div>
+                <md-button class="md-primary md-primary-custom" ng-click="createEmployee()">Create</md-button>
+            </div>
+        </div>
     </md-content>
 </md-content>

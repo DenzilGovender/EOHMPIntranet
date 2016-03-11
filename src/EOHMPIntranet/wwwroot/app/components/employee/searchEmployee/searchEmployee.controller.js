@@ -23,6 +23,10 @@
 
         }
 
+        $scope.createEmployee = function () {
+            $location.path('/CreateEmployee')
+        }
+
         $scope.viewEmployeeDetails = function (employee) {
             EmployeeService.getEmployeeDetails(employee);
             //scope.bop.bopSubCategoryCode = undefined;
