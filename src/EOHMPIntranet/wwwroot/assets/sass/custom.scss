@@ -1,6 +1,12 @@
 ﻿html, body{
     background: $light-gray !important;
 }
+.main-wrap{
+    margin: 0;
+    width: 100%;
+    min-height: calc(100% - 100px);
+    height: calc(100% - 100px);
+}
 .inline-switch{
     height: 80px;
     label{
@@ -520,3 +526,31 @@ overflow: hidden;
 }
 
 
+.md-application-cards{
+
+    md-card{
+        min-width: 300px;
+        min-height: 175px;
+        position: relative;
+        box-shadow: 2px 3px 4px 0px rgba(115, 110, 110, 0.4);
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            cursor: pointer;
+            box-shadow: 3px 4px 5px 1px rgba(189, 19, 19, 0.4);
+            transition: all 0.3s ease-in-out;
+        }
+        md-icon{
+            font-size: 45px;
+        }
+        p{
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+    }   
+} 
+
+
+.md-login{
+    background: url('../img/login_background.png') no-repeat center center!important;
+    background-size: cover!important;
+}

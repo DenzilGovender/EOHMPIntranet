@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function ViewEventController($location, $scope, $firebaseObject, EventService) {
+    function ViewEventController($location, $rootScope, $firebaseObject, EventService) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'View Event';
@@ -17,7 +17,7 @@
         }
 
         vm.addEventComment = function (comment) {
-
+            comment = $rootScope.displayName + ": " + comment;
             var oldEvent = $firebaseObject(ref);
             vm.comments = vm.event.comments;
             if (vm.comments == undefined) {
@@ -47,5 +47,5 @@
         }
     }
     angular.module('EOHIntranet').controller('ViewEventController', ViewEventController);
-    ViewEventController.$inject = ['$location', '$scope', '$firebaseObject', 'EventService'];
+    ViewEventController.$inject = ['$location', '$rootScope', '$firebaseObject', 'EventService'];
 })();

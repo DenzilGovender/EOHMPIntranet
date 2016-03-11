@@ -108,9 +108,7 @@ md-sidenav.md-locked-open {
     p{
         font-size: 90%;
         color: rgba(6,21,86,1.0);
-        &:hover{
-            cursor: pointer;
-        }
+
         span{
             md-icon{
                 color: rgba(6,21,86,1.0);
@@ -131,9 +129,3 @@ md-sidenav.md-locked-open {
     }
 }
 
-.main-navigation{
-    margin: 0;
-    width: calc(100% - 100px);
-    min-height: calc(100% - 100px);
-    height: calc(100% - 100px);
-}

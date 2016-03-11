@@ -1,13 +1,13 @@
 ﻿    <md-input-container>
         <label> Search for buddy</label>
-        <input type="number" ng-model="search" min="1"  name="employee"/>
+        <input type="text" ng-model="search"  name="employee"/>
     </md-input-container>
 
-    <div layout="row" class="md-padding">
+    <!--<div layout="row" class="md-padding">
         <div flex="50" layout="column" layout-align="start start">
             <md-button class="md-raised md-warn" ng-click="vm.SearchEmployee()">Search</md-button>
         </div>
-    </div>
+    </div-->
 
     <md-data-table-container>
         <table md-data-table md-progress="deferred">
@@ -23,12 +23,9 @@
                 <tr ng-repeat="employee in vm.employees | filter: search" ng-click="viewEmployeeDetails(employee)">
                     <td><p class="md-currency-circle">{{employee.firstname}}</p></td>
                     <td>{{employee.lastname}}</td>
-                    <td><p class="md-currency-circle">{{employee.cellphone}}</p></td>
+                    <td>{{employee.cellphone}}</p></td>
                     <td>{{employee.title.TitleName}}</td>
                 </tr>
             </tbody>
         </table>
     </md-data-table-container>
-
-</body>
-</html>
