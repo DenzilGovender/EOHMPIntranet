@@ -26,7 +26,7 @@
         $scope.viewEmployeeDetails = function (employee) {
             EmployeeService.getEmployeeDetails(employee);
             //scope.bop.bopSubCategoryCode = undefined;
-            var templateUrl = '/app/components/employee/viewEmployee/viewEmployee.template.html';
+            var templateUrl = '/app/components/employee/viewEmployee/viewEmployee.html';
             modal.show(templateUrl, 'ViewEmployeeController');
         }
 
