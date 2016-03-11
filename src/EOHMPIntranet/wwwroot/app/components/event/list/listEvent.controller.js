@@ -15,13 +15,17 @@
         init();
 
         function init() {
-            vm.events = $firebaseArray(ref.child('Event'));
-            if ($sessionStorage.userType == 'admin') {
-                vm.isAdmin = true;
-            } else {
-                vm.isAdmin = false;
-            }
-            
+            $firebaseArray(ref.child('Event')).$loaded().then(function (reponse) {
+                vm.events = reponse;
+                for (var i = 0; i < vm.events.length; i++) {
+                    vm.events[i].date = new Date(vm.events[i].date);
+                }
+                if ($sessionStorage.userType == 'admin') {
+                    vm.isAdmin = true;
+                } else {
+                    vm.isAdmin = false;
+                }
+            });
         }
 
         vm.createEvent = function () {
